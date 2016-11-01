@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+encoding//src/common/EncoderUtil.java=UTF-8
+encoding//src/common/sql/ConnectSql.java=UTF-8
+encoding//src/common/sql/ConnectSqlFromWeiboData.java=UTF-8
