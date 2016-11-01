@@ -373,7 +373,6 @@ public class Job {
     public void submitSearchKey(SearchKey sk) {
         Future<?> f = EXECUTOR_SERVICE_MAP.get(sk.getSite()).submit(DownFactory.metaControl(sk));
         Systemconfig.tasks.put(sk.getSite() + "_" + sk.getKey(), f);
-
     }
 
 

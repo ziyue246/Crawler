@@ -38,8 +38,7 @@
 				<entry key="sj99_agricalture_monitor" value="common.extractor.xpath.agricalture.monitor.sub.Sj99Extractor" />
 
 				<entry key="baidu_news_search" value="common.extractor.xpath.news.search.sub.BaiduExtractor" />
-				<entry key="soku_video_search" value="common.extractor.xpath.soku.SokuVideoSearchExtractor" />
-				
+				<entry key="soku_video_search" value="common.extractor.xpath.video.search.sub.SokuVideoSearchXpathExtractor" />
 				
 				
 				<entry key="qingdaonizao_news_search" value="common.extractor.xpath.news.search.sub.QingdaonizaoExtractor" />

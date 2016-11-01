@@ -13,7 +13,6 @@ import common.extractor.xpath.ebusiness.monitor.EbusinessMonitorXpathExtractor;
 import common.extractor.xpath.ebusiness.search.EbusinessSearchXpathExtractor;
 import common.extractor.xpath.news.monitor.NewsMonitorXpathExtractor;
 import common.extractor.xpath.news.search.NewsSearchXpathExtractor;
-import common.extractor.xpath.soku.SokuVideoSearchXpathExtractor;
 import common.extractor.xpath.video.monitor.VideoMonitorXpathExtractor;
 import common.extractor.xpath.video.search.VideoSearchXpathExtractor;
 import common.extractor.xpath.weibo.monitor.WeiboMonitorXpathExtractor;
@@ -76,19 +75,19 @@ public abstract class GenericCommonDownload<T> {
     }
 
     public GenericCommonDownload(SearchKey key) {
+    	
         this.siteFlag = key.getSite();
         this.key = key;
-
+                
         siteinfo = Systemconfig.allSiteinfos.get(siteFlag);
+       
         String url = siteinfo.getUrl();
         if (url != null && !url.startsWith("${") && url.contains("<keyword>")) {
             if (!url.contains("<begin>")) url = url.replace("<keyword>", EncoderUtil.encodeKeyWords(key.getKey(), siteinfo.getCharset()));
             else {
                 if (!url.contains("<end>")) {
                     System.err.println("请检查入口url参数");
-
                 }
-
                 url = url.replace("<keyword>", EncoderUtil.encodeKeyWords(key.getKey().split(";")[0], siteinfo.getCharset()));
                 url = url.replace("<begin>", EncoderUtil.encodeKeyWords(key.getKey().split(";")[1], siteinfo.getCharset()));
                 url = url.replace("<end>", EncoderUtil.encodeKeyWords(key.getKey().split(";")[2], siteinfo.getCharset()));
@@ -98,7 +97,6 @@ public abstract class GenericCommonDownload<T> {
                 }
             }
         } else url = key.getKey();
-
 
         gloaburl = url;
         createHttpClient(siteFlag);
@@ -168,6 +166,7 @@ public abstract class GenericCommonDownload<T> {
     protected Extractor getXpath() {
         Extractor be = null;
         try {
+        	
             String cl = Systemconfig.siteExtractClass.get(siteFlag);
             if (cl != null) be = (Extractor) Class.forName(cl).newInstance();
             else {

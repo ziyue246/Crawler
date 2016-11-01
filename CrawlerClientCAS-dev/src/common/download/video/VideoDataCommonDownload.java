@@ -36,7 +36,7 @@ public class VideoDataCommonDownload extends GenericDataCommonDownload<VideoData
 				xpath.templateContentPage(data, html);
 				
 				Systemconfig.sysLog.log(data.getTitle() + "解析完成。。。");
-				//Systemconfig.dbService.saveData(data);
+				Systemconfig.dbService.saveData(data);
 				Systemconfig.sysLog.log(data.getTitle() + "保存完成。。。");
 			}
 		} catch (Exception e) {

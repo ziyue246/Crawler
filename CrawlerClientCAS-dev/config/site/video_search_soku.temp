@@ -13,7 +13,7 @@
 		<property name="agent" value="false" />
 		<property name="login" value="false" />
 		<!-- 站点入口url -->
-		<property name="url" value="http://www.soku.com" />
+		<property name="url" value="http://www.soku.com/search_video/q_&lt;keyword&gt;?page=1" />
 		<!-- 站点的抽取组件，分为元数据、详细数据等类型 -->
 		<property name="commonComponent">
 			<map>

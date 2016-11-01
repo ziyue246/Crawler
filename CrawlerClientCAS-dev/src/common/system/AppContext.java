@@ -203,7 +203,7 @@ public class AppContext {
     /**
      * 配置数据结构属性设置，公用
      *
-     * @param name      配置名称
+     * @param name      配置名称   video_search_soku
      * @param content   配置内容
      * @param timestamp 最新修改日期
      */

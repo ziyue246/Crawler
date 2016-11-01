@@ -70,7 +70,7 @@ public class CrawlerStart {
         if (Job.getProject().equals("")) {
             System.err.print("[warning]: project not defined!");
         }
-        
+       
 
         AppContext.initAppCtx("");//初始化
         Systemconfig.sysLog.log("\n\n\n");
