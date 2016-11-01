@@ -1,0 +1,14 @@
+.idea
+.settings
+bin
+filedown
+logs
+META-INF
+out
+.classpath
+.project
+crawler_client_v0.951.iml
+readme.txt
+result.txt
+tmpDom.htm
+CrawlerClientCAS.iml
