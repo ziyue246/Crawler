@@ -84,9 +84,13 @@ public abstract class OracleService<T> extends AbstractDBService<T> {
         switch (Systemconfig.crawlerType) {
             case 1:
             case 3:
-            case 5:
+            case 5:{
+                //person
+                clause += " and type like '%;" + (1)  + ";%' ";
+                break;
+            }
             case 7:
-            
+            case 9:
             case 11:
             case 13:
             case 15:
@@ -98,14 +102,10 @@ public abstract class OracleService<T> extends AbstractDBService<T> {
             case 27:
             case 29:
             case 31: 
-            case 37:{
+            case 37:
+            case 39:{
                 //person
                 clause += " and type like '%;" + (Systemconfig.crawlerType + 1) / 2 + ";%' ";
-                break;
-            }
-            case 9:{
-                //person
-                clause += " and type like '%;" + 16 + ";%' ";
                 break;
             }
             case 2:
@@ -122,13 +122,13 @@ public abstract class OracleService<T> extends AbstractDBService<T> {
             case 30:
             case 32:
             case 34:
-            case 38:{
+            case 38:
+            case 40:{
                 col = "url, site_name";
                 table = "monitor_site";
                 clause += " and type= " + ((Systemconfig.crawlerType + 1) % 2) + " and media_type=" + ((Systemconfig.crawlerType + 1) / 2);
                 break;
-            }
-
+            }	
         }
         clause += " and (is_usable=0 or is_usable is null)";
         if (Systemconfig.mode.equals("test")) {
