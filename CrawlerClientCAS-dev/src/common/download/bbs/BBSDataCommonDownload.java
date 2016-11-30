@@ -44,7 +44,7 @@ public class BBSDataCommonDownload extends GenericDataCommonDownload<BBSData> {
        
                 Systemconfig.sysLog.log(data.getTitle() + "解析完成。。。");
                 if (dataCheck(data, html.getContent())) {
-                    //Systemconfig.dbService.saveData(data);
+                    Systemconfig.dbService.saveData(data);
                     Systemconfig.sysLog.log(data.getTitle() + "保存完成。。。");
                     synchronized (key) {
                         key.savedCountIncrease();
