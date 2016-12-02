@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Tue Feb 25 10:46:54 CST 2014
+onejar.license.required=false
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=true
+jarname=wos.jar
+manifest.mergeall=true
+manifest.mainclass=common.WOSStart
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=<po|webscience_for_journal>~.svn/;<po|webscience_for_journal>~journal/
+includes=

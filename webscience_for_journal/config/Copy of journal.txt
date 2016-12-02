@@ -1,0 +1,381 @@
+Analysis of criminal social networks with typed and directed edges:1900:2015:TI
+Spectral malware behavior clustering:1900:2015:TI
+A visual analytics approach to detecting server redirections and data exfiltration:1900:2015:TI
+SPINN Suspicion prediction in nuclear networks:1900:2015:TI
+Learning where to inspect Location learning for crime prediction:1900:2015:TI
+Exploring hacker assets in underground forums:1900:2015:TI
+Organizational National and International Issues in Counter-terrorism or Security Protection:1900:2015:TI
+Multi-objective evolutionary algorithms and multiagent models for optimizing police dispatch:1900:2015:TI
+Nonproliferation informatics Employing Bayesian analysis agent based modeling and information theory for dynamic proliferation pathway studies:1900:2015:TI
+Linking virtual and real-world identities:1900:2015:TI
+Emotion extraction and entrainment in social media The case of U.S. immigration and border security:1900:2015:TI
+Empirical assessment of al qaeda ISIS and taliban propaganda:1900:2015:TI
+Human Behavior in the Security Applications:1900:2015:TI
+Exploring the effect of permission notice on users' initial trust to an application store The case of China's Android application market:1900:2015:TI
+LECENing places to hide Geo-mapping child exploitation material:1900:2015:TI
+Developing understanding of hacker language through the use of lexical semantics:1900:2015:TI
+Exploring threats and vulnerabilities in hacker web Forums IRC and carding shops:1900:2015:TI
+Analyzing the social media footprint of street gangs:1900:2015:TI
+Deception is in the eye of the communicator Investigating pupil diameter variations in automated deception detection interviews:1900:2015:TI
+Security Infrastructure and Tools:1900:2015:TI
+Base station anonymity distributed self-assessment in Wireless Sensor Networks:1900:2015:TI
+On construction of signcryption scheme for smart card security:1900:2015:TI
+Cybersecurity for product lifecycle management a research roadmap:1900:2015:TI
+A privacy protection procedure for large scale individual level data:1900:2015:TI
+Honeypot based unauthorized data access detection in MapReduce systems:1900:2015:TI
+Part II Short Papers:1900:2015:TI
+Data Science and Analytics in Security Informatics:1900:2015:TI
+Filtering spam in Weibo using ensemble imbalanced classification and knowledge expansion:1900:2015:TI
+Inferring social influence and meme interaction with Hawkes processes:1900:2015:TI
+Multivariate embedding based causaltiy detection with short time series:1900:2015:TI
+A comparison of features for automatic deception detection in synchronous computer-mediated communication:1900:2015:TI
+Social sensor analytics Making sense of network models in social media:1900:2015:TI
+Assessment of user home location geoinference methods:1900:2015:TI
+Personality based public sentiment classification in microblog:1900:2015:TI
+Organizational National and International Issues in Counter-terrorism or Security Protection:1900:2015:TI
+The relation between microfinacing and corruption by country An analysis of an open source dataset:1900:2015:TI
+Human Behavior in the Security Applications:1900:2015:TI
+Liar Liar IM on Fire Deceptive language-action cues in spontaneous online communication:1900:2015:TI
+Modeling emotion entrainment of online users in emergency events:1900:2015:TI
+Positive bystanding behavior in cyberbullying The impact of empathy on adolescents' cyber bullied support behavior:1900:2015:TI
+Security Infrastructure and Tools:1900:2015:TI
+A statistical study of covert timing channels using network packet frequency:1900:2015:TI
+A new mobile payment protocol (GMPCP) by using a new key agreement protocol (GC):1900:2015:TI
+Multi-granular aggregation of network flows for security analysis:1900:2015:TI
+Unintentional bugs to vulnerability mapping in Android applications:1900:2015:TI
+Persistent threat pattern discovery:1900:2015:TI
+Random anonymization of mobile sensor data Modified Android framework:1900:2015:TI
+Change detection in evolving computer networks Changes in densification and diameter over time:1900:2015:TI
+Part III Poster Papers:1900:2015:TI
+Data Science and Analytics in Security Informatics:1900:2015:TI
+Power-function-based observation-weighting method for mining actionable behavioral rules. 188:1900:2015:TI
+Detection of financial statement fraud Is accrual really useful as an early warning indicator? 189:1900:2015:TI
+A bottom-up method for constructing topic hierarchies. 190:1900:2015:TI
+Distributed LSI Parallel preprocessing and vector sharing. 191:1900:2015:TI
+Research on construction methods of the Shanghai cooperation organization meta-network model. 192:1900:2015:TI
+Security Infrastructure and Tools:1900:2015:TI
+Elliptic curve cryptography in Java. 193:1900:2015:TI
+An opportunistic encryption extension for the DNS protocol. 194:1900:2015:TI
+Pass-pic A mobile user authentication:1900:2015:TI
+An access control resistant to shoulder-surfing. 196:1900:2015:TI
+Online/off-line ring signature scheme with provable security. 197:1900:2015:TI
+Aegis A Lightweight Tool for Prevent Frauds in Web Browsers:1900:2015:TI
+DNSSEC Misconfigurations How Incorrectly Configured Security Leads to Unreachability:1900:2015:TI
+Overcoming Limited Collaboration Channels in Distributed Intelligence Analysis Visualization Tools and Design Seeds:1900:2015:TI
+Time-to-Event Modeling for Predicting Hacker IRC Community Participant Trajectory:1900:2015:TI
+Authorship Analysis of Inspire Magazine through Stylometric and Psychological Features:1900:2015:TI
+The Nature of Communications and Emerging Communities on Twitter Following the 2013 Syria Sarin Gas Attacks:1900:2015:TI
+Twitter Sentiment Analysis for Security-Related Information Gathering:1900:2015:TI
+Descriptive Analytics Examining Expert Hackers in Web Forums:1900:2015:TI
+Identifying Top Sellers In Underground Economy Using Deep Learning-Based Sentiment Analysis:1900:2015:TI
+Time Critical Disinformation Influence Minimization in Online Social Networks:1900:2015:TI
+A Selective Defense for Application Layer DDoS Attacks:1900:2015:TI
+Time Profiles for Identifying Users in Online Environments:1900:2015:TI
+ALPD Active Learning Framework for Enhancing the Detection of Malicious PDF Files:1900:2015:TI
+Predicting Popularity of Forum Threads for Public Events Security:1900:2015:TI
+Predicting Links in Multi-relational Networks:1900:2015:TI
+Practical Interception of DECT Encrypted Voice Communication in Unified Communications Environments:1900:2015:TI
+Mining the Web for Sympathy The Pussy Riot Case:1900:2015:TI
+Resource-Based Event Reconstruction of Digital Crime Scenes:1900:2015:TI
+Inferring itineraries of containerized cargo through the application of Conditional Random Fields:1900:2015:TI
+Trusted Detection of Sensitive Activities on Mobile Phones Using Power Consumption Measurements:1900:2015:TI
+Resilience of Anti-malware Programs to Naïve Modifications of Malicious Binaries:1900:2015:TI
+On the Usability of Augmented Reality for Information Exchange in Teams from the Security Domain:1900:2015:TI
+Understanding the Factors Affecting UX and Technology Acceptance in the Context of Automated Border Controls:1900:2015:TI
+Addressing the Increasing Volume and Variety of Digital Evidence Using an Ontology:1900:2015:TI
+Modelling and Analysis of Identity Threat Behaviors through Text Mining of Identity Theft Stories:1900:2015:TI
+Maritime Situation Analysis A Multi-vessel Interaction and Anomaly Detection Framework:1900:2015:TI
+On the Adequacy of Performance Models in an Adaptive Border Inspection Management System:1900:2015:TI
+Land Border Permeability and Irregular Migration Using Geospatial Intelligence from Satellite Data:1900:2015:TI
+Studies of Integration Readiness Levels Case Shared Maritime Situational Awareness System:1900:2015:TI
+Threat Detection in Tweets with Trigger Patterns and Contextual Cues:1900:2015:TI
+Towards a Comprehensive Insight into the Thematic Organization of the Tor Hidden Services:1900:2015:TI
+A Case Study in Opportunity Reduction Mitigating the Dirt Jumper Drive-Smart Attack:1900:2015:TI
+Security Components in a One-Stop-Shop Border Control System:1900:2015:TI
+Uninvited Connections A Study of Vulnerable Devices on the Internet of Things (IoT):1900:2015:TI
+Ranking Online Memes in Emergency Events Based on Transfer Entropy:1900:2015:TI
+Challenges to a Smooth-Running Data Security Audits. Case A Finnish National Security Auditing Criteria KATAKRI:1900:2015:TI
+Three Statistical Approaches to Sessionizing Network Flow Data:1900:2015:TI
+Statistical Frameworks for Detecting Tunnelling in Cyber Defence Using Big Data:1900:2015:TI
+Adaptive Change Detection for Relay-Like Behaviour:1900:2015:TI
+An Approximate Framework for Flexible Network Flow Screening:1900:2015:TI
+Causal Inference in Social Media Using Convergent Cross Mapping:1900:2015:TI
+Exfiltration of Information from Air-Gapped Machines Using Monitor's LED Indicator:1900:2015:TI
+Filtering Automated Polling Traffic in Computer Network Flow Data:1900:2015:TI
+Modelling New Edge Formation in a Computer Network through Bayesian Variable Selection:1900:2015:TI
+Automatic Timeline Construction and Analysis for Computer Forensics Purposes:1900:2015:TI
+A Service-Indepenent Model for Linking Online User Profile Information:1900:2015:TI
+Exploring Opinion Dynamics in Security-Related Microblog Data:1900:2015:TI
+Multiagent Models for Police Resource Allocation and Dispatch:1900:2015:TI
+Application of a Linear Time Method for Change Point Detection to the Classification of Software:1900:2015:TI
+How Analysts Think (?) Early Observations:1900:2015:TI
+Optical Security Document Simulator for Black-Box Testing of ABC Systems:1900:2015:TI
+Forecasting Country Stability in North Africa:1900:2015:TI
+AccountabilityFS A File System Monitor for Forensic Readiness:1900:2015:TI
+Foraging Online Social Networks:1900:2015:TI
+CAPER Collaborative Information Acquisition Processing Exploitation and Reporting for the Prevention of Organised Crime. 316:1900:2015:TI
+Detecting Threats of Violence in Online Discussions Using Bigrams of Important Words. 319:1900:2015:TI
+Learning to Classify Hate and Extremism Promoting Tweets. 320:1900:2015:TI
+Recommending Documents for Complex Question Exploration by Analyzing Browsing Behavior. 321:1900:2015:TI
+Passwords are Dead Alternative Authentication Methods. 322:1900:2015:TI
+Sensemaking and Cognitive Bias Mitigation in Visual Analytics. 323:1900:2015:TI
+Metal Oxide Gas Sensors Technologies for Hidden People Detection. 324:1900:2015:TI
+Towards a Methodology for Cybersecurity Risk Management Using Agents Paradigm. 325:1900:2015:TI
+Computational Approach for Detection of Illegal Activity over the Internet. 326:1900:2015:TI
+POLAR-An Interactive Patterns of Life Visualisation Tool for Intelligence Analysis. 327:1900:2015:TI
+Modeling Flash Mobs in Cybernetic Space Evaluating Threats of Emerging Socio-Technical Behaviors to Human Security. 328:1900:2015:TI
+Military Geospatial Profiling Analysis:1900:2015:TI
+Robust Navigation and Communication in the Maritime Domain The TRITON Project. 331:1900:2015:TI
+Detection of Olfactory Traces by Orthogonal Gas Identification Technologies - DOGGIES. 332:1900:2015:TI
+When Counting is Not Enough Limitations of NSA's Effectiveness Assessment of Surveillance Technology. 333:1900:2015:TI
+DOCSCOPE ID Printing Techniques Signatures. 334:1900:2015:TI
+2013 IEEE International Conference on Intelligence and Security Informatics Seattle WA USA Jun:1900:2015:TI
+Crime linkage A fuzzy MCDM approach:1900:2015:TI
+Occupational fraud detection through visualization:1900:2015:TI
+Flexible creation of indicators of scientific and technological emergence Emerging phenomena and big data:1900:2015:TI
+Analyzing security threats as reported by the United States Computer Emergency Readiness Team (US-CERT):1900:2015:TI
+Detecting collaboration from behavior:1900:2015:TI
+Evaluating text visualization An experiment in authorship analysis:1900:2015:TI
+Machine learning for attack vector identification in malicious source code:1900:2015:TI
+How analysts cognitively "connect the dots":1900:2015:TI
+Use of latent semantic indexing to identify name variants in large data collections:1900:2015:TI
+Learning to classify emotional content in crisis-related tweets:1900:2015:TI
+From when and what to where Linking spatio-temporal visualizations in visual analytics:1900:2015:TI
+Dynamic information-theoretic measures for security informatics:1900:2015:TI
+Moving target defense for adaptive adversaries:1900:2015:TI
+Detecting future social unrest in unprocessed Twitter data "Emerging phenomena and big data":1900:2015:TI
+SociAL Sensor Analytics Measuring phenomenology at scale:1900:2015:TI
+Phishing detection using traffic behavior spectral clustering and random forests:1900:2015:TI
+Saudi Arabia's response to cyber conflict A case study of the Shamoon malware incident:1900:2015:TI
+Side-view face authentication based on wavelet and random forest with subsets:1900:2015:TI
+Effects of Fear appeals and point of reference on the persuasiveness of IT security communications:1900:2015:TI
+A multi-modality attributes representation scheme for Group Activity characterization and data fusion:1900:2015:TI
+Towards task-centered network models through semantic workflows:1900:2015:TI
+Cyber friendly fire Research challenges for security informatics:1900:2015:TI
+Modeling and detecting anomalous topic access:1900:2015:TI
+Towards a network-of-networks framework for cyber security:1900:2015:TI
+Stealthy software Next-generation cyber-attacks and defenses:1900:2015:TI
+Building a better intelligence machine A new approach to capability review and development:1900:2015:TI
+OCC model-based emotion extraction from online reviews:1900:2015:TI
+Information graphs of event threads Identifying and building forward and backward event threads for societal events:1900:2015:TI
+A graph analytic metric for mitigating advanced persistent threat:1900:2015:TI
+Gamification of emergency response training A public health example:1900:2015:TI
+TALISON - Tensor analysis of social media data:1900:2015:TI
+Analyzing users' web surfing patterns to trace terrorists and criminals:1900:2015:TI
+Click Fraud Detection with Bot Signatures:1900:2015:TI
+Click fraud botnet detection by calculating mix adjusted traffic value A method for de-cloaking click fraud attacks that is resistant to spoofing:1900:2015:TI
+Predicting user participation in social networking sites:1900:2015:TI
+An interdisciplinary approach to studying and improving terrorism analysis:1900:2015:TI
+Detecting deception in interrogation settings:1900:2015:TI
+Discovering thematic structure in political datasets:1900:2015:TI
+Stochastic game model for information dissemination of emergency events in social network:1900:2015:TI
+Context matters Improving the uses of big data for forecasting civil unrest Emerging phenomena and big data:1900:2015:TI
+Layered behavioral trace modeling for threat detection:1900:2015:TI
+Differences between individuals with and without experience with assault in identifying facial signs of imminent aggression:1900:2015:TI
+Efficient anomaly detection in dynamic attributed graphs Emerging phenomena and big data:1900:2015:TI
+Identifying groups of interest through temporal analysis and event response monitoring:1900:2015:TI
+Discovery of persistent threat structures through temporal and geo-spatial characterization in evolving networks:1900:2015:TI
+Improving expert judgment by coherence weighting:1900:2015:TI
+Detecting unfolding crises with Visual Analytics and Conceptual Maps Emerging phenomena and big data:1900:2015:TI
+Anomalies in network traffic:1900:2015:TI
+Exploring the structural characteristics of social networks in a large criminal court database:1900:2015:TI
+Crowdsourcing and gamification techniques in Inspire (AQAP online magazine):1900:2015:TI
+Sociolect-based community detection:1900:2015:TI
+Conceptual framework to enable early warning of relevant phenomena "Emerging phenomena and big data":1900:2015:TI
+Maritime situation analysis:1900:2015:TI
+Behavioral targeting with social regularization:1900:2015:TI
+Language use in Inspire magazine:1900:2015:TI
+The edge effect Exploring high crime zones near residential neighborhoods:1900:2015:TI
+A model docking system for understanding radicalization:1900:2015:TI
+Improving supply chain security using big data:1900:2015:TI
+Auto-Highlighter Identifying Salient Sentences in Text:1900:2015:TI
+How to use experience in cyber analysis An analytical reasoning support system:1900:2015:TI
+Unsupervised ranking and characterization of differentiated clusters. 266:1900:2015:TI
+Identifying threatening networks from transactional data. 267:1900:2015:TI
+Implementation of framework to identify potential phishing websites. 268:1900:2015:TI
+Assessment of malicious applications using permissions and enhanced user interfaces on Android. 270:1900:2015:TI
+Exploring trajectory behavior model for anomaly detection in maritime moving objects. 271:1900:2015:TI
+Ensemble classification over stock market time series and economy news:1900:2015:TI
+A new pruning method for resolving conflicts in actionable behavioral rules. 274:1900:2015:TI
+Reflecting on visualization for cyber security:1900:2015:TI
+Investigating the efficacy of network visualizations for intelligence tasks:1900:2015:TI
+Capturing human cognition in cyber-security simulations with NETS:1900:2015:TI
+Visualization techniques for efficient malware detection:1900:2015:TI
+Information visualization metrics and methods for cyber security evaluation:1900:2015:TI
+Christopher Alexander's fifteen properties Toward developing evaluation metrics for security visualizations:1900:2015:TI
+Research towards a systematic signature discovery process:1900:2015:TI
+An investigation into label fusion on sparse data:1900:2015:TI
+Graph analytics for signature discovery:1900:2015:TI
+Lame' curve-based signature discovery learning technique for network traffic classification:1900:2015:TI
+Capturing signatures of anomalous behavior in online social networks:1900:2015:TI
+A generalized bio-inspired method for discovering sequence-based signatures:1900:2015:TI
+Signature discovery for personalized medicine:1900:2015:TI
+The lifecycle of Bayesian network models developed for Multi-Source Signature assessment of Nuclear Programs:1900:2015:TI
+Assessing the quality of bioforensic signatures:1900:2015:TI
+The CommonGround visual paradigm for biosurveillance:1900:2015:TI
+PHYSENSE Scalable sociological interaction models for influence estimation on online social networks:1900:2015:TI
+Measuring expertise and bias in cyber security using cognitive and neuroscience approaches:1900:2015:TI
+Action knowledge extraction from Web text:1900:2015:TI
+Discovering seasonal patterns of smoking behavior using online search information:1900:2015:TI
+Discovering the rating pattern of online reviewers through data coclustering:1900:2015:TI
+Jargon and graph modularity on twitter:1900:2015:TI
+homebrowsesearchabout:1900:2015:TI
+2012 IEEE International Conference on Intelligence and Security Informatics ISI 2012 Washington DC USA Jun:1900:2015:TI
+Cloud-enabled data sharing model:1900:2015:TI
+A game theory approach to deception strategy in computer mediated communication:1900:2015:TI
+Impact of anti-phishing tool performance on attack success rates:1900:2015:TI
+Predictive defense against evolving adversaries:1900:2015:TI
+Securing cyberspace Identifying key actors in hacker communities:1900:2015:TI
+An efficient secure comparison protocol:1900:2015:TI
+Spatio-temporal modeling of criminal incidents using geographic demographic and twitter-derived information:1900:2015:TI
+Outlier detection using semantic sensors:1900:2015:TI
+An active binocular integrated system for intelligent robot vision:1900:2015:TI
+Police patrol district design using agent-based simulation and GIS:1900:2015:TI
+Structural analysis of online criminal social networks:1900:2015:TI
+Leveraging sociological models for prediction I Inferring adversarial relationships:1900:2015:TI
+Leveraging sociological models for prediction II Early warning for complex contagions:1900:2015:TI
+Scalable sentiment classification across multiple Dark Web Forums:1900:2015:TI
+Machine learning for the automatic identification of terrorist incidents in worldwide news media:1900:2015:TI
+Rebel with many causes A computational model of insurgency:1900:2015:TI
+Partially supervised learning for radical opinion identification in hate group web forums:1900:2015:TI
+Phishing website detection using Latent Dirichlet Allocation and AdaBoost:1900:2015:TI
+An event-driven SIR model for topic diffusion in web forums:1900:2015:TI
+Acquiring netizen group's opinions for modeling food safety events:1900:2015:TI
+Agile detection of framing rhetoric in social media:1900:2015:TI
+Click frauds and price determination models:1900:2015:TI
+Exploratory experiments to identify fake websites by using features from the network stack:1900:2015:TI
+Evaluating source trustability with data provenance A research note:1900:2015:TI
+Towards cyber operations - The new role of academic cyber security research and education:1900:2015:TI
+Preserving privacy for moving objects data mining:1900:2015:TI
+Structural inference in political science datasets:1900:2015:TI
+Unsupervised incremental sequence learning for insider threat detection:1900:2015:TI
+Efficient mining structural motifs for biosequences with intra- and inter-block gap constraints:1900:2015:TI
+Anomaly detection in spatiotemporal data in the maritime domain:1900:2015:TI
+A unit-circle classification algorithm to characterize back attack and normal traffic for intrusion detection:1900:2015:TI
+Graph search beyond text Relational searches in semantic hyperlinked data:1900:2015:TI
+Detecting criminal networks SNA models are compared to proprietary models:1900:2015:TI
+Categorizing temporal events A case study of domestic terrorism:1900:2015:TI
+Vectors of extremism across the Canada-US border:1900:2015:TI
+Research note Concept to develop a software-based counter-terrorism campaign decision support tool:1900:2015:TI
+Evaluating an integrated forum portal for terrorist surveillance and analysis:1900:2015:TI
+Identifying cliques in dark web forums - An agglomerative clustering approach:1900:2015:TI
+Extracting action knowledge in security informatics:1900:2015:TI
+Extracting semantic information structures from free text law enforcement data:1900:2015:TI
+Ranking documents by internal variability:1900:2015:TI
+A generic cyber attack response resource risk assessment model. 183:1900:2015:TI
+Using semantic networks to counter cyber threats. 184:1900:2015:TI
+Communication patterns based detection of anomalous network traffic. 185:1900:2015:TI
+Emergency decision support using an agent-based modeling approach. 186:1900:2015:TI
+Data exploitation using visual analytics:1900:2015:TI
+Evaluation method for node importance based on node condensation in terrorism networks. 193:1900:2015:TI
+A robust evaluation of terrorist network based on node-lap degree of triads. 194:1900:2015:TI
+Building a web collection for online surveillance of U.S. domestic terrorism. 195:1900:2015:TI
+Multi-spectral face recognition Identification of people in difficult environments:1900:2015:TI
+Establishing a foundation for automated human credibility screening:1900:2015:TI
+Using burst detection techniques to identify suspicious vehicular traffic at border crossings:1900:2015:TI
+Design and implementation of SNODSOC Novel class detection for social network analysis:1900:2015:TI
+Extracting opinion explanations from Chinese online reviews:1900:2015:TI
+AdaBoost-based sensor fusion for credibility assessment:1900:2015:TI
+Payment card fraud Challenges and solutions:1900:2015:TI
+Deciphering wisdom of crowds from their influenced binary decisions:1900:2015:TI
+Terrorism Informatics:1900:2015:TI
+Dynamic user-level affect analysis in social media Modeling violence in the Dark Web:1900:2015:TI
+The Dark Web Forum Portal From multi-lingual to video:1900:2015:TI
+An SIR model for violent topic diffusion in social media:1900:2015:TI
+Al Qaeda terrorist financing and technologies to track the finance network:1900:2015:TI
+Study on covert networks of terrorists based on interactive relationship hypothesis:1900:2015:TI
+Infrastructure Protection and Emergency Responses:1900:2015:TI
+Automatic behavior model selection by iterative learning and abnormality recognition:1900:2015:TI
+Analyzing group communication for preventing data leakage via email:1900:2015:TI
+The spatio-temporal generalized additive model for criminal incidents:1900:2015:TI
+Test-case generation for marine safety and security scenarios:1900:2015:TI
+An extensible decision engine for Marine Safety and Security:1900:2015:TI
+The Geopolitical Web Assessing societal risk in an uncertain world:1900:2015:TI
+Network-based Data Analytics:1900:2015:TI
+Estimating the sentiment of social media content for security informatics applications:1900:2015:TI
+Analyzing social media in escalating crisis situations:1900:2015:TI
+Extending the classification of nodes in social networks:1900:2015:TI
+Text Mining and Content Analysis:1900:2015:TI
+Topic discovery based on dual EM merging:1900:2015:TI
+Supervised term weighting for sentiment analysis:1900:2015:TI
+LanguageNet A novel framework for processing unstructured text information:1900:2015:TI
+Identification of related information of interest across free text documents:1900:2015:TI
+Extraction of expanded entity phrases:1900:2015:TI
+The distribution of event complexity in the British Columbia court system:1900:2015:TI
+Enterprise Risk Management and Information Systems Security:1900:2015:TI
+Leveraging social networks to detect anomalous insider actions in collaborative environments:1900:2015:TI
+Proactive defense for evolving cyber threats:1900:2015:TI
+HoneyGen An automated honeytokens generator:1900:2015:TI
+Managing changes with legacy security engineering processes:1900:2015:TI
+Anomaly detection using weak estimators:1900:2015:TI
+A digraph model for risk identification and mangement in SCADA systems:1900:2015:TI
+Innovative and Emerging Applications:1900:2015:TI
+A tamper-proof software watermark using code encryption:1900:2015:TI
+Enhancing unlinkability in Vehicular Ad Hoc Networks:1900:2015:TI
+Identifying Dark Web clusters with temporal coherence analysis:1900:2015:TI
+Information Sharing and Data/Text Mining:1900:2015:TI
+Criminal identity resolution using social behavior and relationship attributes:1900:2015:TI
+Incorporating data sources and methodologies for crime data mining:1900:2015:TI
+Mining actionable behavioral rules from group data:1900:2015:TI
+Forecasting group behavior via multiple plan recognition:1900:2015:TI
+Privacy preserving two-party k-means clustering over vertically partitioned dataset:1900:2015:TI
+Detecting emerging topics and trends via predictive analysis of 'meme' dynamics:1900:2015:TI
+Web content mining for alias identification A first step towards suspect tracking:1900:2015:TI
+Preserving privacy in social network integration with τ-tolerance:1900:2015:TI
+Enterprise Risk Management and Information Systems Security:1900:2015:TI
+Dynamic Sensitivity-Based Access Control:1900:2015:TI
+Session-wise private data exchange in eHealth peer-to-peer database management systems:1900:2015:TI
+Publisher click fraud in the pay-per-click advertising market Incentives and consequences:1900:2015:TI
+Infrastructure Protection and Emergency Responses:1900:2015:TI
+Decision modeling for resilient infrastructures:1900:2015:TI
+Trojan characteristics analysis based on Stochastic Petri Nets:1900:2015:TI
+Innovative and Emerging Applications:1900:2015:TI
+Extended approximate string matching algorithms to detect name aliases:1900:2015:TI
+The construction of accounting information system under the environment of the network. 220:1900:2015:TI
+Game analysis in international anti-terrorism strike. 221:1900:2015:TI
+Research on government on-line information management and service:1900:2015:TI
+The analysis of military intelligence early warning based on open source intelligence. 226:1900:2015:TI
+Improving the security of the distributed enterprise data warehouse system. 227:1900:2015:TI
+Enabling dynamic linkage of linguistic census data at Statistics Canada (extended abstract). 228:1900:2015:TI
+Utilizing infrared technology to prevent terrorist attacks. 229:1900:2015:TI
+Organization of social network messages to improve understanding of an evolving crisis. 230:1900:2015:TI
+heteroHarvest Harvesting information from heterogeneous sources. 231:1900:2015:TI
+Citizen-generated spatial data and information Risks and opportunities. 232:1900:2015:TI
+International Symposium on System Informatics and Engineering:1900:2015:TI
+A theoretical model to minimize the operational cost for canary-equipped electronic system's health management:1900:2015:TI
+The polynomial representation of Gray map on Zp2:1900:2015:TI
+Prognostics and health monitoring for lithium-ion battery:1900:2015:TI
+Lessons from method A successful Electronic Medical Record (EMR) system implementation:1900:2015:TI
+Bayesian reliability modeling of multi-level system with interdependent subsystems and components:1900:2015:TI
+A decomposition approach to imbalanced classification:1900:2015:TI
+A nonparametric fault isolation approach through hybrid novelty score:1900:2015:TI
+Quantitative risk analysis model of integrating fuzzy fault tree with Bayesian Network:1900:2015:TI
+Clustering algorithm-based control charts:1900:2015:TI
+Daily seasonal and spatial patterns of PM10 in Seoul Korea:1900:2015:TI
+Design of logic processes for prognostics and health management in an avionics system:1900:2015:TI
+Research on numerical analysis for color matching in textile dyeing based on least square Fitting:1900:2015:TI
+Research on application of the minimum error average fitting method in computer color matching:1900:2015:TI
+A cost-based FMEA decision tool for product quality design and management:1900:2015:TI
+Solving incidents in telecommunications using a multi-agent system:1900:2015:TI
+Empirical analysis on causal relationship between institution and economic development based on VAR method:1900:2015:TI
+Situational awareness on disruption management A system information propagation approach:1900:2015:TI
+Analysis of cyberspace security situational awareness based on fuzz reason:1900:2015:TI
+Analysis of accelerated degradation test under constant stress with errors for longitudinal data:1900:2015:TI
+Multivariate process monitoring and fault identification model using decision tree learning techniques:1900:2015:TI
+Study on distributions of fatigue crack-nucleating particle sizes and cracks formation in aluminum alloy:1900:2015:TI
+Studying on influencing factors of Fretting fatigue life of aluminum alloy:1900:2015:TI
+A reliability integrated acceptance test plan for series systems whose components following exponential distributions:1900:2015:TI
+An optimal control algorithm based on Kalman filter for ARMA disturbances:1900:2015:TI
+Logistic regression analysis for Predicting Methicillin-resistant Staphylococcus Aureus (MRSA) in-hospital mortality:1900:2015:TI
+Compiling the marine environment spectrum based on inversion satellite remote sensing data:1900:2015:TI
+Distribution rule of corrosion damage morphology parameters for aluminum alloy:1900:2015:TI
+An new approach for newsboy problem with fuzzy demand:1900:2015:TI
+International Workshop on Social Computing:1900:2015:TI
+On the analysis of the applications and social influence of mobile phone reading in the medium and small cities in China Take the first pilot city Baoding for an example:1900:2015:TI
+Study on covert networks of terroristic organizations based on text analysis:1900:2015:TI
+Lifespan and popularity measurement of online content on social networks:1900:2015:TI
+Integrating online social networks for enhancing reputation systems of e-commerce:1900:2015:TI
+A geographic analysis of P2P-TV viewership:1900:2015:TI
+Measurement and analysis of topology and information propagation on Sina-Microblog:1900:2015:TI
+On image similarity in the context of multimedia social computing:1900:2015:TI
+Boosting rank with predictable training error:1900:2015:TI

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<site>
+
+	<prop name="web_author" 	value="]/TD[@class='summary_data']//DIV[SPAN[contains(.,'Author')]][1]" />
+	<prop name="web_title" 		value="]/TD//SPAN[@class='reference-title']" />
+	<prop name="pubyear" 		value="//TR[contains(@id,'RECORD')]/TD[@class='summary_data']//DIV[SPAN[contains(.,'Source')]][1]" /> 
+<!-- 列表页 -->
+	<prop name="title" 			value="//DIV[@class='search-results-content']/DIV/DIV/A" />
+	<prop name="url" 			value="//DIV[@class='search-results-content']/DIV/DIV/A/@href" />
+	<prop name="timelist" 		value="//DIV[@class='search-results-content']/DIV/SPAN[preceding-sibling::SPAN[contains(.,'Published')]]" />
+	<prop name="next" 			value="//A[@class='paginationNext']/@href" />
+
+<!-- 内容页 -->
+	<prop name="pageTitle" 		value="//DIV[@class='title']" />
+	<prop name="author" 		value="//P[@class='FR_field'][SPAN[contains(.,'By')]]" />
+	<prop name="pubtime" 		value="//P[@class='FR_field'][SPAN[contains(.,'Publish')]]" />
+	<prop name="journal" 		value="//P[@class='sourceTitle']" />
+	<prop name="brief" 			value="//P[@class='FR_field'][preceding-sibling::DIV[contains(.,'Abstract')]]" />
+	<!-- keyword <prop name="keyword" value="//P[@class='FR_field'][SPAN[contains(.,'Author Key')]]/A" /> -->
+	<!-- 2015-11-26 14:46:00 应要求用Controlled Indexing 和uncontrolled indexing 代替 -->
+	<prop name="keyword" 		value="//P[@class='FR_field'][SPAN[contains(.,'Indexing')]]|//P[@class='FR_field'][SPAN[contains(.,'Author Key')]]/A|//P[@class='FR_field'][SPAN[contains(.,'KeyWords Plus:')]]/A" />
+	<prop name="address" 		value="//TD[@class='fr_address_row2']" />
+	<prop name="pageReferurl" 	value="//P[@class='FR_field'][SPAN[contains(.,'Times Cited')]]/A/@href" />
+	<prop name="citeurl" 		value="//P[@class='FR_field'][SPAN[contains(.,'Cited Refer')]]/A/@href" />
+	<prop name="refernum" 		value="//P[@class='FR_field'][SPAN[contains(.,'Times Cited')]]//B" />
+	<prop name="citenum" 		value="//P[@class='FR_field'][SPAN[contains(.,'Cited Refer')]]//B" />
+	<prop name="email" 			value="//P[@class='FR_field'][SPAN[contains(.,'E-mail')]]/A" />
+	<prop name="fund" 			value="//TR[@class='fr_data_row']/TD/DIV" />
+	<prop name="category" 		value="//P[@class='FR_field'][SPAN[contains(.,'Research Areas:')]]/text()[normalize-space()]" />
+	
+</site>

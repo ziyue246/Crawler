@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="systemconfig" class="common.system.Systemconfig"
+		init-method="initial">
+
+		<property name="keywords" 		value="${keywords}" 	/>
+		<property name="style" 			value="${style}" 		/>
+		<property name="createFile" 	value="${creatFile}" 	/>
+		<property name="table" 			value="${table}" 		/>
+		<property name="mysqlService" 	ref="mysqlService" 		/>
+		
+		<property name="filePath" 		value="${filePath}" 	/>
+		<property name="agentIp" 		value="${agentip}" 		/>
+		<property name="agentPort" 		value="${agentport}" 	/>
+		
+		<property name="siteExtractClass">
+			<map>
+				<entry key="wos" 	value="common.extractor.sub.WosExtractor" />
+			</map>
+		</property>
+			
+		<property name="siteHttpClass">
+			<map>
+				<entry key="wos" 	value="common.http.sub.WosHttpClient" />
+			</map>
+		</property>
+		
+	</bean>
+	
+	<bean id="mysqlService" 	class="common.service.MysqlServiceImpl">
+		<property name="jdbcTemplate" 	ref="jdbcTemplate" />
+	</bean>
+</beans>

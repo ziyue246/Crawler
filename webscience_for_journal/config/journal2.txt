@@ -1,0 +1,88 @@
+Detecting Unfolding Crises with Visual Analytics and Conceptual Maps Emerging Phenomena and Big Data:1900:2015:TI
+Discovery of Persistent Threat Structures through Temporal and Geo-Spatial Characterization in Evolving Networks:1900:2015:TI
+Occupational Fraud Detection Through Visualization:1900:2015:TI
+Analyzing Security Threats as Reported by the United States Computer Emergency Readiness Team (US-CERT):1900:2015:TI
+Machine Learning for Attack Vector Identification in Malicious Source Code:1900:2015:TI
+How Analysts Cognitively "Connect the Dots":1900:2015:TI
+Use of Latent Semantic Indexing to Identify Name Variants in Large Data Collections:1900:2015:TI
+Learning to Classify Emotional Content in Crisis-Related Tweets:1900:2015:TI
+Dynamic Information-Theoretic Measures for Security Informatics:1900:2015:TI
+Moving Target Defense for Adaptive Adversaries:1900:2015:TI
+Phishing Detection Using Traffic Behavior, Spectral Clustering, and Random Forests:1900:2015:TI
+Side-view Face Authentication Based on Wavelet and Random Forest with Subsets:1900:2015:TI
+Effects of Fear Appeals and Point of Reference on the Persuasiveness of IT Security Communications:1900:2015:TI
+A Multi-Modality Attributes Representation Scheme for Group Activity Characterization and Data Fusion:1900:2015:TI
+Towards Task-Centered Network Models through Semantic Workflows:1900:2015:TI
+Modeling and Detecting Anomalous Topic Access:1900:2015:TI
+Towards a Network-of-Networks Framework for Cyber Security:1900:2015:TI
+OCC Model-Based Emotion Extraction from Online Reviews:1900:2015:TI
+A Graph Analytic Metric for Mitigating Advanced Persistent Threat:1900:2015:TI
+TALISON - Tensor Analysis of Social Media Data:1900:2015:TI
+Analyzing Users' Web Surfing Patterns to Trace Terrorists and Criminals:1900:2015:TI
+Click Fraud Detection with Bot Signatures:1900:2015:TI
+Predicting User Participation in Social Networking Sites:1900:2015:TI
+An Interdisciplinary Approach to Studying and Improving Terrorism Analysis:1900:2015:TI
+Detecting Deception in Interrogation Settings:1900:2015:TI
+Stochastic Game Model for Information Dissemination of Emergency Events in Social Network:1900:2015:TI
+Layered Behavioral Trace Modeling for Threat Detection:1900:2015:TI
+Differences between Individuals with and without Experience with Assault in Identifying Facial Signs of Imminent Aggression:1900:2015:TI
+Identifying Groups of Interest through Temporal Analysis and Event Response Monitoring:1900:2015:TI
+Improving Expert Judgment by Coherence Weighting:1900:2015:TI
+Exploring the Structural Characteristics of Social Networks in a Large Criminal Court Database:1900:2015:TI
+Crowdsourcing and Gamification Techniques in Inspire (AQAP Online Magazine):1900:2015:TI
+Sociolect-Based Community Detection:1900:2015:TI
+Behavioral Targeting with Social Regularization:1900:2015:TI
+Language Use in Inspire Magazine:1900:2015:TI
+A Model Docking System for Understanding Radicalization:1900:2015:TI
+Improving Supply Chain Security Using Big Data:1900:2015:TI
+Ensemble Classification over Stock Market Time Series and Economy News:1900:2015:TI
+Reflecting on Visualization for Cyber Security:1900:2015:TI
+Investigating the Efficacy of Network Visualizations for Intelligence Tasks:1900:2015:TI
+Capturing Human Cognition in Cyber-Security Simulations with NETS:1900:2015:TI
+Visualization Techniques for Efficient Malware Detection:1900:2015:TI
+Information Visualization Metrics and Methods for Cyber Security Evaluation:1900:2015:TI
+Research towards a systematic signature discovery process:1900:2015:TI
+An Investigation into Label Fusion on Sparse Data:1900:2015:TI
+Graph Analytics for Signature Discovery:1900:2015:TI
+Lame' Curve-based signature discovery learning technique for network traffic classification:1900:2015:TI
+Capturing Signatures of Anomalous Behavior in Online Social Networks:1900:2015:TI
+A Generalized Bio-inspired Method for Discovering Sequence-based Signatures:1900:2015:TI
+The Lifecycle of Bayesian Network Models Developed for Multi-Source Signature Assessment of Nuclear Programs:1900:2015:TI
+Assessing the Quality of Bioforensic Signatures:1900:2015:TI
+The CommonGround Visual Paradigm for Biosurvillance:1900:2015:TI
+Measuring Expertise and Bias in Cyber Security Using Cognitive and Neuroscience Approaches:1900:2015:TI
+Action Knowledge Extraction from Web Text:1900:2015:TI
+Discovering Seasonal Patterns of Smoking Behavior Using Online Search Information:1900:2015:TI
+Discovering the Rating Pattern of Online Reviewers Through Data Coclustering:1900:2015:TI
+Jargon and Graph Modularity on Twitter:1900:2015:TI
+Discovering Thematic Structure in Political Datasets:1900:2015:TI
+Detecting Collaboration from Behavior:1900:2015:TI
+Anomalies in Network Traffic:1900:2015:TI
+Maritime Situation Analysis:1900:2015:TI
+Language Use in Inspire Magazine:1900:2015:TI
+Signature Discovery for Personalized Medicine:1900:2015:TI
+Crime Linkage: a Fuzzy MCDM Approach:1900:2015:TI
+Flexible Creation of Indicators of Scientific and Technological Emergence Emerging Phenomena and Big Data:1900:2015:TI
+Evaluating Text Visualization: An Experiment in Authorship Analysis:1900:2015:TI
+From When and What to Where: Linking Spatio-Temporal Visualizations in Visual Analytics:1900:2015:TI
+Detecting future social unrest in unprocessed Twitter data "Emerging Phenomena and Big Data":1900:2015:TI
+SociAL Sensor Analytics: Measuring Phenomenology at Scale:1900:2015:TI
+Saudi Arabia's Response to Cyber Conflict: A case study of the Shamoon malware incident:1900:2015:TI
+Cyber Friendly Fire: Research Challenges for Security Informatics:1900:2015:TI
+Stealthy Software: Next-generation Cyber-attacks and Defenses (Invited Paper):1900:2015:TI
+Building a better intelligence machine: A new approach to capability review and development:1900:2015:TI
+Information Graphs of Event Threads Identifying and Building Forward and Backward Event Threads for Societal Events:1900:2015:TI
+Gamification of Emergency Response Training A Public Health Example:1900:2015:TI
+Click Fraud Botnet Detection by Calculating Mix Adjusted Traffic Value A Method for De-Cloaking Click Fraud Attacks that is Resistant to Spoofing:1900:2015:TI
+Context Matters: Improving the Uses of Big Data for Forecasting Civil Unrest Emerging Phenomena and Big Data:1900:2015:TI
+Efficient Anomaly Detection in Dynamic, Attributed Graphs Emerging Phenomena and Big Data:1900:2015:TI
+Auto-Highlighter: Identifying Salient Sentences in Text:1900:2015:TI
+How to Use Experience in Cyber Analysis: An Analytical Reasoning Support System:1900:2015:TI
+Christopher Alexander's Fifteen Properties: Toward Developing Evaluation Metrics for Security Visualizations:1900:2015:TI
+PHYSENSE: Scalable Sociological Interaction Models for Influence Estimation on Online Social Networks:1900:2015:TI
+Unsupervised Ranking and Characterization of Differentiated Clusters:1900:2015:TI
+Identifying Threatening Networks from Transactional Data:1900:2015:TI
+Implementation of Framework to Identify Potential Phishing Websites:1900:2015:TI
+Assessment of malicious applications using permissions and enhanced user interfaces on Android:1900:2015:TI
+Exploring Trajectory Behavior Model for Anomaly Detection in Maritime Moving Objects:1900:2015:TI
+A New Pruning Method for Resolving Conflicts in Actionable Behavioral Rules:1900:2015:TI
