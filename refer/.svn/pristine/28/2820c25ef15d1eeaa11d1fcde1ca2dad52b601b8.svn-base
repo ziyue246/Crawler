@@ -1,0 +1,240 @@
+package refer.crawler.common;
+
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import refer.crawler.http.HtmlInfo;
+import refer.crawler.http.Httpwos;
+import refer.model.po.CitedReference;
+
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/**
+ * Created by Administrator on 2016/12/8 0008.
+ */
+public class CrawlerCiteTest {
+    //@Test
+    public void firstPostGet() throws Exception {
+
+    }
+    //@Test
+    public void getCitedReferenceXpath(){
+
+        CrawlerCite crawlerCite = new CrawlerCite();
+
+		String keyword = "Computer";
+
+		HtmlInfo html = new HtmlInfo();
+		Httpwos wosHttp = new Httpwos();
+
+		String  User_Agent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";
+
+		html.setUa(User_Agent);
+
+        crawlerCite.firstPostGet(wosHttp, html);
+		List<CitedReference> citelist = new LinkedList<CitedReference>();
+
+		citelist = crawlerCite.getCitedReferenceList(keyword,2005,2016);
+        for (int i = 0; i < citelist.size(); i++){
+            CitedReference cite = citelist.get(i);
+            SystemCommon.printLog("第\t"+i+"\t条信息");
+			System.out.println("authorAbr     :"+cite.getAuthorAbr());
+			System.out.println("authorExp     :"+cite.getAuthorExp());
+			System.out.println("citedWorkAbr  :"+cite.getCitedWorkAbr());
+			System.out.println("citedWorkExp  :"+cite.getCitedWorkExp());
+			System.out.println("year          :"+cite.getYear());
+			System.out.println("volume        :"+cite.getVolume());
+			System.out.println("issue         :"+cite.getIssue());
+			System.out.println("page          :"+cite.getPage());
+			System.out.println("identifier    :"+cite.getIdentifier());
+			System.out.println("citingArticles:"+cite.getCitingArticles());
+			System.out.println("viewRecordText:"+cite.getViewRecordText());
+			System.out.println("viewRecordUrl :"+cite.getViewRecordUrl());
+			System.out.println();
+		}
+    }
+    //@Test
+    public void getCitedReferenceXpath1(){
+
+        CrawlerCite cite = new CrawlerCite();
+
+        String keyword = "Computer";// Graphics Forum
+        HtmlInfo html = new HtmlInfo();
+        Httpwos wosHttp = new Httpwos();
+
+        String  User_Agent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";
+        wosHttp.setKeyword(keyword);
+        wosHttp.setStartYear(2005);
+        wosHttp.setEndYear(2016);
+        html.setUa(User_Agent);
+
+
+        String  firstGetUrl = "http://apps.webofknowledge.com/summary.do?product=RSCI&" +
+                "parentQid=<parentqid>&" +
+                "SID=<sid>" +
+                "&search_mode=CitedReferenceSearch&formValue(summary_mode)=CitedReferenceSearch&update_back2search_link_param=yes&" +
+                "page=<page>";
+
+
+        cite.firstPostGet(wosHttp, html);
+
+        Node node = DomTree.getNode(html.getContent(), html.getEncode());
+        //  <td align="center" class="goto" style="color:#595959;">                                                                         第
+
+        //     <span id="pageCount.bottom">2</span> 页 &nbsp;
+
+        System.out.println();
+        System.out.println(CitedReferenceXpath.getAllPage(node));
+        System.out.println(html.getRealUrl());
+
+
+        //</td>
+        String xpath = "//DIV[@class='summVCRnav']//SPAN[@id='pageCount.bottom']";///TD[@class='citedRefTableRow1'][2]/SPAN[@class='cited_work_exp']";
+
+        //xpath = "//TR/TD[@class='citedRefTableRow1'][1]";
+        ////DIV[@class='comment_info flex-1']/DIV[@class='comment_title author']
+        //xpath = "//DIV[@class='pages_content']/P/IMG/@src|//TD[@align='left']/P/SPAN/IMG/@src";
+
+		/*
+		 *  private static String lenth="//TR/TD[@class='citedRefTableRow1'][1]";
+			private static String authorAbr="//TR/TD[@class='citedRefTableRow1'][1]]";
+			private static String authorExp="//TR/TD[@class='citedRefTableRow1'][1]/SPAN[contains(@name,'author_exp')][1]";
+			private static String citedWorkAbr="//TR/TD[@class='citedRefTableRow1'][2]/SPAN[@class='cited_work_abbrev']";
+			private static String citedWorkExp="//TR/TD[@class='citedRefTableRow1'][2]/SPAN[@class='cited_work_abbrev']";
+			private static String year="//TR/TD[@class='citedRefTableRow1'][3]";
+			private static String volume="//TR/TD[@class='citedRefTableRow1'][4]";
+			private static String issue="//TR/TD[@class='citedRefTableRow1'][5]";
+			private static String page="//TR/TD[@class='citedRefTableRow1'][6]";
+			private static String identifier="//TR/TD[@class='citedRefTableRow1'][7]";
+			private static String citingArticles="//TR/TD[@class='citedRefTableRow1'][8]";
+			private static String viewRecordText="//TR/TD[@class='citedRefTableRow1'][9]//A/@title";
+			private static String viewRecordUrl="//TR/TD[@class='citedRefTableRow1'][9]//A/@href";
+			private static String viewRecordPreUrl="http://apps.webofknowledge.com/"
+		 */
+        //http://apps.webofknowledge.com/InterService.do?fromPID=RSCI&returnLink=http%3a%2f%2fapps.webofknowledge.com%2fsummary.do%3fhighlighted_tab%3dRSCI%26last_prod%3dRSCI%26SID%3dN2j3oKzdJKngZjitPxE%26SID%3dN2j3oKzdJKngZjitPxE%26SID%3dN2j3oKzdJKngZjitPxE%26SID%3dN2j3oKzdJKngZjitPxE%26product%3dRSCI%26product%3dRSCI%26product%3dRSCI%26product%3dRSCI%26qid%3d1%26search_mode%3dCitedReferenceSearch%26search_mode%3dCitedReferenceSearch%26search_mode%3dCitedReferenceSearch%26search_mode%3dCitedReferenceSearch&srcDesc=RET2RSCI&srcAlt=����+%3f%3f%3fzh_CN.links.returnLink.alt.RSCI%3f%3f%3f&product=WOS&toPID=WOS&fromPID=RSCI&action=RCIInterproductLink&SID=N2j3oKzdJKngZjitPxE&cacheurl=yes&URL=%2FCitedFullRecord.do%3Fproduct%3DWOS%26colName%3DWOS%26SID%3DN2j3oKzdJKngZjitPxE%26search_mode%3DCitedFullRecord%26isickref%3DWOS%3A000320658600003
+        //InterService.do?fromPID=RSCI&returnLink=http%3a%2f%2fapps.webofknowledge.com%2fsummary.do%3fhighlighted_tab%3dRSCI%26last_prod%3dRSCI%26SID%3dX2zbjpaOae5elFDSA15%26product%3dRSCI%26qid%3d1%26search_mode%3dCitedReferenceSearch&srcDesc=RET2RSCI&srcAlt=Back+to+%3f%3f%3fen_US.links.returnLink.alt.RSCI%3f%3f%3f&product=WOS&toPID=WOS&fromPID=RSCI&action=RCIInterproductLink&SID=X2zbjpaOae5elFDSA15&cacheurl=yes&URL=%2FCitedFullRecord.do%3Fproduct%3DWOS%26colName%3DWOS%26SID%3DX2zbjpaOae5elFDSA15%26search_mode%3DCitedFullRecord%26isickref%3DWOS%3AA1995RV86800002
+
+        NodeList nl = DomTree.commonList(xpath, node);
+        for (int i = 0; i < nl.getLength(); i++) {
+            nl.item(i).getNodeName();
+            String s = nl.item(i).getTextContent().trim();
+
+            System.out.println((i+1)+"\t:\t"+s);
+            //System.out.println(nl.item(i).getChildNodes().getLength());
+//            String []result = {""};
+//            getNodeContent(nl.item(i),"name","author_exp",true,result);
+//            System.out.println(result[0]);
+        }
+        System.out.println("nl.getLength:" + nl.getLength());
+    }
+    public static void getNodeContent(Node node,String name,String value,boolean mark,String []result){
+        if(mark){
+            NamedNodeMap al =  node.getAttributes();
+            if(al!=null) {
+                for (int j = 0; j < al.getLength(); j++) {
+                    if(al.item(j).getNodeName().equals(name)&&
+                            al.item(j).getNodeValue().startsWith(value)){
+                        if(result[0].length()==0){
+                            result[0]=node.getTextContent();
+                        }
+                    }
+                }
+            }
+            NodeList nl = node.getChildNodes();
+            if(nl==null)return ;
+            for (int i = 0; i < nl.getLength(); i++) {
+                getNodeContent(nl.item(i),name,value,mark,result);
+            }
+        }else{
+            NamedNodeMap al =  node.getAttributes();
+            if(al!=null) {
+                for (int j = 0; j < al.getLength(); j++) {
+                    if(name.equals(al.item(j).getNodeName())){
+                        if(result[0].length()==0){
+                            result[0]=al.item(j).getNodeValue();
+                        }
+                    }
+
+                }
+            }
+            NodeList nl = node.getChildNodes();
+            if(nl==null)return ;
+            for (int i = 0; i < nl.getLength(); i++) {
+                getNodeContent(nl.item(i),name,value,mark,result);
+            }
+        }
+    }
+
+
+
+    //@Test
+    public void printTest(){
+        CrawlerCite crawlerCite = new CrawlerCite();
+
+        String keyword = "Computer";
+
+        HtmlInfo html = new HtmlInfo();
+        Httpwos wosHttp = new Httpwos();
+
+        String  User_Agent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";
+
+        html.setUa(User_Agent);
+        html.setEncode("utf-8");
+
+        wosHttp.setKeyword(keyword);
+        wosHttp.setStartYear(2005);
+        wosHttp.setEndYear(2016);
+        crawlerCite.firstPostGet(wosHttp, html);
+
+        //Set<String> key =
+
+        List<Integer> list =  new LinkedList<Integer>();
+        for (int i = 1; i < 40 ; i++) {
+            list.add(i);
+        }
+        crawlerCite.secondPPostGet(wosHttp, html,list);
+        //System.out.println(html.getContent());
+
+        crawlerCite.thirdPrint(wosHttp,html,1,2);
+        System.out.println(html.getContent());
+    }
+
+    public static void main(String []arg){
+        CrawlerCiteTest ct = new CrawlerCiteTest();
+        //ct.getCitedReferenceXpath();
+        ct.printTest();
+    }
+    //@Test
+    public void recordKeysMapping() {
+
+        String content  = "ntAllIds.replace(\"###\"+selectedId,\"\"); selectedIdsSizeInt = selectedIdsSizeInt -1; } $('#selectedIdsFastLane_bottom').text(currentAllIds); $('input[id=\"selected_cited_recs.bottom\"]').attr(\"value\", selectedIdsSizeInt); });  });  }  </script>                      <script type=\"text/javascript\"> handle_nav_final_counts('79', '2'); </script>                             <script type=\"text/javascript\">                                                                                                                                   </script> <script type=\"text/javascript\">  if(typeof window.recordKeysMapping == 'undefined'){ window.recordKeysMapping = new Object(); }    window.recordKeysMapping['3'] = '428650066';    window.recordKeysMapping['2'] = '433393318';    window.recordKeysMapping['1'] = '441993020';    window.recordKeysMapping['10'] = '83704119';    window.recordKeysMapping['7'] = '268113213';    window.recordKeysMapping['6'] = '274247986';    window.recordKeysMapping['5'] = '317279999';    window.recordKeysMapping['4'] = '428650055';    window.recordKeysMapping['9'] = '92437357';    window.recordKeysMapping['8'] = '270202798';  </script>                            <script type=\"text/javascript\">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </script> <script type=\"text/javascript\">  if(typeof window.recordKeysMapping == 'undefined'){ window.recordKeysMapping = new Object(); }    window.recordKeysMapping['19'] = '55875110';    window.recordKeysMapping['17'] = '498132795';    window.recordKeysMapping['35'] = '25261550';    window.recordKeysMapping['18'] = '59829390';    window.recordKeysMapping['36'] = '505903302';    window.recordKeysMapping['33'] = '15431603';    window.recordKeysMapping['15'] = '64266290';    window.recordKeysMapping['34'] = '10748969';    window.recordKeysMapping['16'] = '63493865';    window.recordKeysMapping['13'] = '82982987';    window.recordKeysMapping['39'] = '14774240';    window.recordKeysMapping['14'] = '74600483';    window.recordKeysMapping['37'] = '3412226';    window.recordKeysMapping['11'] = '83704091';    window.recordKeysMapping['38'] = '492617633';    window.recordKeysMapping['12'] = '498670899';    window.recordKeysMapping['21'] = '47531827';    window.recordKeysMapping['20'] = '47531704';    window.recordKeysMapping['43'] = '495892652';    window.recordKeysMapping['42'] = '10440235';    window.recordKeysMapping['41'] = '6979869';    window.recordKeysMapping['40'] = '14355127';    window.recordKeysMapping['49'] = '3817077';    window.recordKeysMapping['48'] = '2076062';    window.recordKeysMapping['45'] = '60182116';    window.recordKeysMapping['44'] = '3442096';    window.recordKeysMapping['47'] = '15577651';    window.recordKeysMapping['46'] = '461924681';    window.recordKeysMapping['22'] = '47531769';    window.recordKeysMapping['23'] = '385202567';    window.recordKeysMapping['24'] = '498177647';    window.recordKeysMapping['25'] = '371382';    window.recordKeysMapping['26'] = '27059755';    window.recordKeysMapping['27'] = '42787835';    window.recordKeysMapping['28'] = '426972946';    window.recordKeysMapping['29'] = '651465';    window.recordKeysMapping['30'] = '21718664';    window.recordKeysMapping['32'] = '23424821';    window.recordKeysMapping['31'] = '23424637';    window.recordKeysMapping['50'] = '7803897';  </script>                                                                                                                                                                         ";
+
+        String datatt = "window\\.recordKeysMapping\\[\\'\\d{1,3}\\'\\]\\s+=\\s+\\'\\d{6,11}";
+
+
+
+        Map<String,String> map = new HashMap<>();
+        String time = extractOne(content, datatt,map);
+        System.out.println("time:" + time);
+    }
+
+
+    public String extractOne(String str, String pattern,Map<String,String> map) {
+        Pattern p = Pattern.compile(pattern);
+        Matcher m = p.matcher(str);
+
+        while (m.find()) {
+            String s=m.group();
+            String key = s.split("\\[\\'")[1].split("\\'\\]")[0];
+            String value = s.split("= \\'")[1].split("\\'")[0];
+            map.put(key,value);
+        }
+        return null;
+    }
+
+}

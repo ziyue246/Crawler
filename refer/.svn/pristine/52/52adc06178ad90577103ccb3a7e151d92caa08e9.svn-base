@@ -1,0 +1,6 @@
+.check-table{
+    width: 1200px;
+}
+.check-finished{
+    cursor: pointer;
+}

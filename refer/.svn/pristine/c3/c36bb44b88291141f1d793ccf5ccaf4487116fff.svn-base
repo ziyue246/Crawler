@@ -1,0 +1,179 @@
+package refer.crawler.common;
+
+import org.junit.Test;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import refer.crawler.http.HtmlInfo;
+import refer.crawler.http.Httpwos;
+import refer.model.po.CitedReference;
+import refer.model.po.OneStepResponse;
+
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/**
+ * Created by Administrator on 2016/12/8 0008.
+ */
+public class CrawlerCiteTest {
+    //@Test
+    public void firstPostGet() throws Exception {
+
+    }
+    @Test
+    public void getCitedReferenceXpath(){
+
+        CrawlerCite crawlerCite = new CrawlerCite();
+
+        String keyword = "Computer";
+
+        HtmlInfo html = new HtmlInfo();
+        Httpwos wosHttp = new Httpwos();
+
+        OneStepResponse oneStepResponse
+                = crawlerCite.getCitedReferenceList(keyword,2005,2016);
+
+        List<CitedReference> citelist = oneStepResponse.getCitedList();
+        for (int i = 0; i < citelist.size(); i++){
+            CitedReference cite = citelist.get(i);
+            SystemCommon.printLog("第\t"+(i+1)+"\t条信息");
+            System.out.println("checkValue    :"+cite.getCheckValue());
+            System.out.println("authorAbr     :"+cite.getAuthorAbr());
+            System.out.println("authorExp     :"+cite.getAuthorExp());
+            System.out.println("citedWorkAbr  :"+cite.getCitedWorkAbr());
+            System.out.println("citedWorkExp  :"+cite.getCitedWorkExp());
+            System.out.println("year          :"+cite.getYear());
+            System.out.println("volume        :"+cite.getVolume());
+            System.out.println("issue         :"+cite.getIssue());
+            System.out.println("page          :"+cite.getPage());
+            System.out.println("identifier    :"+cite.getIdentifier());
+            System.out.println("citingArticles:"+cite.getCitingArticles());
+            System.out.println("viewRecordText:"+cite.getViewRecordText());
+            System.out.println("viewRecordUrl :"+cite.getViewRecordUrl());
+            System.out.println();
+        }
+
+
+
+        List<String> selectList = new LinkedList<>();
+        for (int i = 0; i < 50; i++) {
+            selectList.add(i+"");
+        }
+        selectList.add(56+"");
+
+        oneStepResponse.setSelectList(selectList);
+
+        String result = crawlerCite.printAllContent(oneStepResponse);
+        System.out.println(result);
+    }
+
+    public static void getNodeContent(Node node,String name,String value,boolean mark,String []result){
+        if(mark){
+            NamedNodeMap al =  node.getAttributes();
+            if(al!=null) {
+                for (int j = 0; j < al.getLength(); j++) {
+                    if(al.item(j).getNodeName().equals(name)&&
+                            al.item(j).getNodeValue().startsWith(value)){
+                        if(result[0].length()==0){
+                            result[0]=node.getTextContent();
+                        }
+                    }
+                }
+            }
+            NodeList nl = node.getChildNodes();
+            if(nl==null)return ;
+            for (int i = 0; i < nl.getLength(); i++) {
+                getNodeContent(nl.item(i),name,value,mark,result);
+            }
+        }else{
+            NamedNodeMap al =  node.getAttributes();
+            if(al!=null) {
+                for (int j = 0; j < al.getLength(); j++) {
+                    if(name.equals(al.item(j).getNodeName())){
+                        if(result[0].length()==0){
+                            result[0]=al.item(j).getNodeValue();
+                        }
+                    }
+
+                }
+            }
+            NodeList nl = node.getChildNodes();
+            if(nl==null)return ;
+            for (int i = 0; i < nl.getLength(); i++) {
+                getNodeContent(nl.item(i),name,value,mark,result);
+            }
+        }
+    }
+
+
+
+    //@Test
+    public void printTest(){
+        CrawlerCite crawlerCite = new CrawlerCite();
+
+        String keyword = "Computer";
+
+        HtmlInfo html = new HtmlInfo();
+        Httpwos wosHttp = new Httpwos();
+
+        String  User_Agent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";
+
+        html.setUa(User_Agent);
+        html.setEncode("utf-8");
+
+        wosHttp.setKeyword(keyword);
+        wosHttp.setStartYear(2005);
+        wosHttp.setEndYear(2016);
+        crawlerCite.firstPostGet(wosHttp, html);
+
+        //Set<String> key =
+
+        List<Integer> list =  new LinkedList<Integer>();
+        for (int i = 1; i < 40 ; i++) {
+            list.add(i);
+        }
+        crawlerCite.secondPPostGet(wosHttp, html,list);
+        //System.out.println(html.getContent());
+
+        crawlerCite.thirdPrint(wosHttp,html,1,2);
+        System.out.println(html.getContent());
+    }
+
+    public static void main123(String []arg){
+        CrawlerCiteTest ct = new CrawlerCiteTest();
+        //ct.getCitedReferenceXpath();
+        ct.printTest();
+    }
+    //@Test
+    public void recordKeysMapping() {
+
+        String content  = "ntAllIds.replace(\"###\"+selectedId,\"\"); selectedIdsSizeInt = selectedIdsSizeInt -1; } $('#selectedIdsFastLane_bottom').text(currentAllIds); $('input[id=\"selected_cited_recs.bottom\"]').attr(\"value\", selectedIdsSizeInt); });  });  }  </script>                      <script type=\"text/javascript\"> handle_nav_final_counts('79', '2'); </script>                             <script type=\"text/javascript\">                                                                                                                                   </script> <script type=\"text/javascript\">  if(typeof window.recordKeysMapping == 'undefined'){ window.recordKeysMapping = new Object(); }    window.recordKeysMapping['3'] = '428650066';    window.recordKeysMapping['2'] = '433393318';    window.recordKeysMapping['1'] = '441993020';    window.recordKeysMapping['10'] = '83704119';    window.recordKeysMapping['7'] = '268113213';    window.recordKeysMapping['6'] = '274247986';    window.recordKeysMapping['5'] = '317279999';    window.recordKeysMapping['4'] = '428650055';    window.recordKeysMapping['9'] = '92437357';    window.recordKeysMapping['8'] = '270202798';  </script>                            <script type=\"text/javascript\">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </script> <script type=\"text/javascript\">  if(typeof window.recordKeysMapping == 'undefined'){ window.recordKeysMapping = new Object(); }    window.recordKeysMapping['19'] = '55875110';    window.recordKeysMapping['17'] = '498132795';    window.recordKeysMapping['35'] = '25261550';    window.recordKeysMapping['18'] = '59829390';    window.recordKeysMapping['36'] = '505903302';    window.recordKeysMapping['33'] = '15431603';    window.recordKeysMapping['15'] = '64266290';    window.recordKeysMapping['34'] = '10748969';    window.recordKeysMapping['16'] = '63493865';    window.recordKeysMapping['13'] = '82982987';    window.recordKeysMapping['39'] = '14774240';    window.recordKeysMapping['14'] = '74600483';    window.recordKeysMapping['37'] = '3412226';    window.recordKeysMapping['11'] = '83704091';    window.recordKeysMapping['38'] = '492617633';    window.recordKeysMapping['12'] = '498670899';    window.recordKeysMapping['21'] = '47531827';    window.recordKeysMapping['20'] = '47531704';    window.recordKeysMapping['43'] = '495892652';    window.recordKeysMapping['42'] = '10440235';    window.recordKeysMapping['41'] = '6979869';    window.recordKeysMapping['40'] = '14355127';    window.recordKeysMapping['49'] = '3817077';    window.recordKeysMapping['48'] = '2076062';    window.recordKeysMapping['45'] = '60182116';    window.recordKeysMapping['44'] = '3442096';    window.recordKeysMapping['47'] = '15577651';    window.recordKeysMapping['46'] = '461924681';    window.recordKeysMapping['22'] = '47531769';    window.recordKeysMapping['23'] = '385202567';    window.recordKeysMapping['24'] = '498177647';    window.recordKeysMapping['25'] = '371382';    window.recordKeysMapping['26'] = '27059755';    window.recordKeysMapping['27'] = '42787835';    window.recordKeysMapping['28'] = '426972946';    window.recordKeysMapping['29'] = '651465';    window.recordKeysMapping['30'] = '21718664';    window.recordKeysMapping['32'] = '23424821';    window.recordKeysMapping['31'] = '23424637';    window.recordKeysMapping['50'] = '7803897';  </script>                                                                                                                                                                         ";
+
+        String datatt = "window\\.recordKeysMapping\\[\\'\\d{1,3}\\'\\]\\s+=\\s+\\'\\d{6,11}";
+
+
+
+        Map<String,String> map = new HashMap<>();
+        String time = extractOne(content, datatt,map);
+        System.out.println("time:" + time);
+    }
+
+
+    public String extractOne(String str, String pattern,Map<String,String> map) {
+        Pattern p = Pattern.compile(pattern);
+        Matcher m = p.matcher(str);
+
+        while (m.find()) {
+            String s=m.group();
+            String key = s.split("\\[\\'")[1].split("\\'\\]")[0];
+            String value = s.split("= \\'")[1].split("\\'")[0];
+            map.put(key,value);
+        }
+        return null;
+    }
+
+}

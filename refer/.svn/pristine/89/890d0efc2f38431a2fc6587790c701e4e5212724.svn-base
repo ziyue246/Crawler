@@ -1,0 +1,206 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>refer</groupId>
+  <artifactId>refer</artifactId>
+  <packaging>war</packaging>
+  <version>1.0</version>
+  <name>refer Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/junit/junit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+    </dependency>
+
+      <dependency>
+          <groupId>javax</groupId>
+          <artifactId>javaee-api</artifactId>
+          <version>7.0</version>
+          <scope>provided</scope>
+      </dependency>
+
+    <!-- Spring -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>4.3.4.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>4.3.4.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>4.3.4.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>4.3.4.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>4.3.4.RELEASE</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+	<dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpclient</artifactId>
+	    <version>4.5.2</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient -->
+	<dependency>
+	    <groupId>commons-httpclient</groupId>
+	    <artifactId>commons-httpclient</artifactId>
+	    <version>3.1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore -->
+	<dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpcore</artifactId>
+	    <version>4.4.5</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/net.sourceforge.nekohtml/nekohtml -->
+	<dependency>
+	    <groupId>net.sourceforge.nekohtml</groupId>
+	    <artifactId>nekohtml</artifactId>
+	    <version>1.9.22</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.glassfish/jsonp-jaxrs -->
+	<dependency>
+	    <groupId>org.glassfish</groupId>
+	    <artifactId>jsonp-jaxrs</artifactId>
+	    <version>1.0</version>
+	</dependency>
+
+
+	<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient-cache -->
+	<dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpclient-cache</artifactId>
+	    <version>4.5.2</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+	<dependency>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	    <version>2.5</version>
+	</dependency>
+	
+    <!-- Hibernate -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>5.2.5.Final</version>
+        <exclusions>
+            <exclusion>
+                <groupId>javassist</groupId>
+                <artifactId>javassist</artifactId>
+            </exclusion>
+        </exclusions>
+    </dependency>
+
+    <!-- Struts2 -->
+    <dependency>
+      <groupId>org.apache.struts</groupId>
+      <artifactId>struts2-core</artifactId>
+      <version>2.5.5</version>
+    </dependency>
+      <dependency>
+          <groupId>org.apache.struts</groupId>
+          <artifactId>struts2-spring-plugin</artifactId>
+          <version>2.5.5</version>
+      </dependency>
+    <dependency>
+      <groupId>org.apache.struts</groupId>
+      <artifactId>struts2-convention-plugin</artifactId>
+      <version>2.5.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.struts</groupId>
+      <artifactId>struts2-json-plugin</artifactId>
+      <version>2.5.5</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+      <version>1.8.9</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
+    <dependency>
+      <groupId>com.mchange</groupId>
+      <artifactId>c3p0</artifactId>
+      <version>0.9.5.2</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>6.0.5</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.7.21</version>
+    </dependency>
+      <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+      <dependency>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-core</artifactId>
+          <version>2.6</version>
+      </dependency>
+
+      <dependency>
+          <groupId>com.thetransactioncompany</groupId>
+          <artifactId>cors-filter</artifactId>
+          <version>2.5</version>
+      </dependency>
+
+      <!-- crawler -->
+      <!-- https://mvnrepository.com/artifact/xalan/xalan -->
+      <dependency>
+          <groupId>xalan</groupId>
+          <artifactId>xalan</artifactId>
+          <version>2.7.2</version>
+      </dependency>
+    
+  </dependencies>
+  <build>
+    <finalName>refer</finalName>
+      <sourceDirectory>src/main/java</sourceDirectory>
+      <resources>
+          <resource>
+              <directory>src/main/java</directory>
+              <excludes>
+                  <exclude>**/*.java</exclude>
+              </excludes>
+          </resource>
+      </resources>
+
+    <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+  </build>
+
+ 
+</project>

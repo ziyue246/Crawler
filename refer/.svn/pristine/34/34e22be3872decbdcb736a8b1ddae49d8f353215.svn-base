@@ -1,0 +1,18 @@
+#Created by JInto - www.guh-software.de
+#Tue Mar 17 14:52:54 CST 2009
+log4j.appender.R=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.R.DatePattern='.'yyyy-MM-dd'.log'
+log4j.appender.R.File=logs/refer
+log4j.appender.R.layout=org.apache.log4j.PatternLayout
+log4j.appender.R.layout.ConversionPattern=%d{yyyy-MM-dd HH\:mm\:ss,SSS} [%t] [%c] [%p] - %m%n
+
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout 
+log4j.appender.stdout.layout.ConversionPattern=%-d{yyyy-MM-dd HH\:mm\:ss,SSS} [%c]-[%p] %m%n
+
+
+log4j.logger.baking.dao=DEBUG  
+log4j.logger.org.hibernate.SQL=DEBUG  
+log4j.rootLogger=info, stdout, R
+
+

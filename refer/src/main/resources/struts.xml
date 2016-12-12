@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<constant name="struts.action.extension" value="do,action" />
+	<!-- 设置文件上传大小限制为100m -->
+	<constant name="struts.multipart.maxSize" value="104857600" />
+
+	<package name="publiz" extends="json-default">
+		<interceptors>
+			<!-- 系统的默认拦截器 -->
+			<interceptor-stack name="default">
+				<!-- 过滤#参数攻击 -->
+				<interceptor-ref name="params">
+					<param name="excludeParams">.*\\u0023.*</param>
+				</interceptor-ref>
+				<!-- json -->
+				<interceptor-ref name="json" />
+				<!-- struts2 default -->
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<!-- 定义全局默认拦截器 -->
+		<default-interceptor-ref name="default" />
+		<default-action-ref name="notFound" />
+
+		<!-- ========= 4.action ======== -->
+
+
+		<action name="json_*_*" class="{1}Action" method="{2}">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+			<result name="input" type="json"></result>
+		</action>
+
+		<action name="notFound">
+			<result>/404.html</result>
+		</action>
+	</package>
+	
+</struts>

@@ -1,0 +1,130 @@
+package refer.crawler.common;
+
+import org.junit.Test;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import refer.crawler.http.HtmlInfo;
+import refer.crawler.http.Httpwos;
+import refer.model.po.CitedReference;
+import refer.model.po.OneStepResponse;
+
+import java.util.List;
+
+/**
+ * Created by Administrator on 2016/12/12 0012.
+ */
+public class CrawlerCiteTestt {
+    //@Test
+    public void firstPostGet() throws Exception {
+
+    }
+    //@Test
+    public void getCitedReferenceXpath(){
+
+        CrawlerCite crawlerCite = new CrawlerCite();
+
+        String keyword = "Computer";
+
+        HtmlInfo html = new HtmlInfo();
+        Httpwos wosHttp = new Httpwos();
+
+        String  User_Agent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";
+
+        html.setUa(User_Agent);
+
+        crawlerCite.firstPostGet(wosHttp, html);
+
+        OneStepResponse oneStepResponse
+         = crawlerCite.getCitedReferenceList(keyword,2005,2016);
+
+        List<CitedReference> citelist = oneStepResponse.getCitedList();
+        for (int i = 0; i < citelist.size(); i++){
+            CitedReference cite = citelist.get(i);
+            SystemCommon.printLog("第\t"+i+"\t条信息");
+            System.out.println("authorAbr     :"+cite.getAuthorAbr());
+            System.out.println("authorExp     :"+cite.getAuthorExp());
+            System.out.println("citedWorkAbr  :"+cite.getCitedWorkAbr());
+            System.out.println("citedWorkExp  :"+cite.getCitedWorkExp());
+            System.out.println("year          :"+cite.getYear());
+            System.out.println("volume        :"+cite.getVolume());
+            System.out.println("issue         :"+cite.getIssue());
+            System.out.println("page          :"+cite.getPage());
+            System.out.println("identifier    :"+cite.getIdentifier());
+            System.out.println("citingArticles:"+cite.getCitingArticles());
+            System.out.println("viewRecordText:"+cite.getViewRecordText());
+            System.out.println("viewRecordUrl :"+cite.getViewRecordUrl());
+            System.out.println();
+        }
+    }
+
+    public static void getNodeContent(Node node,String name,String value,boolean mark,String []result){
+        if(mark){
+            NamedNodeMap al =  node.getAttributes();
+            if(al!=null) {
+                for (int j = 0; j < al.getLength(); j++) {
+                    if(al.item(j).getNodeName().equals(name)&&
+                            al.item(j).getNodeValue().startsWith(value)){
+                        if(result[0].length()==0){
+                            result[0]=node.getTextContent();
+                        }
+                    }
+                }
+            }
+            NodeList nl = node.getChildNodes();
+            if(nl==null)return ;
+            for (int i = 0; i < nl.getLength(); i++) {
+                getNodeContent(nl.item(i),name,value,mark,result);
+            }
+        }else{
+            NamedNodeMap al =  node.getAttributes();
+            if(al!=null) {
+                for (int j = 0; j < al.getLength(); j++) {
+                    if(name.equals(al.item(j).getNodeName())){
+                        if(result[0].length()==0){
+                            result[0]=al.item(j).getNodeValue();
+                        }
+                    }
+
+                }
+            }
+            NodeList nl = node.getChildNodes();
+            if(nl==null)return ;
+            for (int i = 0; i < nl.getLength(); i++) {
+                getNodeContent(nl.item(i),name,value,mark,result);
+            }
+        }
+    }
+
+
+    //@Test
+    public void printTest(){
+        SystemCommon.printLog("34234");
+//        CrawlerCite crawlerCite = new CrawlerCite();
+//
+//        String keyword = "IEEE";
+//
+//        HtmlInfo html = new HtmlInfo();
+//        Httpwos wosHttp = new Httpwos();
+//
+//        String  User_Agent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";
+//
+//        List<Integer> list = new LinkedList<>();
+//        list.add(3);
+//        list.add(8);
+//        list.add(30);
+//        list.add(120);
+//        list.add(220);
+//
+//        OneStepResponse oneStepResponse = new OneStepResponse();
+//        String printContent = crawlerCite.printAllContent(oneStepResponse);
+//        System.out.println(printContent);
+    }
+    @Test
+    public static void main123(String []arg){
+        CrawlerCiteTestt ct = new CrawlerCiteTestt();
+        ct.getCitedReferenceXpath();
+        //ct.printTest();
+    }
+
+}

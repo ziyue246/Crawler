@@ -1,0 +1,11 @@
+<div class="nav"><a routerLink="/checklist/{{record.reportId}}">返回</a></div>
+<div *ngFor="let paper of paperlist">
+    <div>
+        <p *ngFor="let cited of getCitedList(paper)">
+            {{cited.authorAbr}} {{cited.citedWorkAbr}} {{cited.year}} {{cited.volume}}  {{cited.issue}}    {{cited.page}}
+        </p>
+    </div>
+    <div>
+        {{getRecord(paper).content}}
+    </div>
+</div>

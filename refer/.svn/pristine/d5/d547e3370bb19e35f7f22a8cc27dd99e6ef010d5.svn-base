@@ -1,0 +1,49 @@
+body {
+    color: rgb(77, 77, 77);
+    font: 12px Arial, 微软雅黑, 'hiragino sans gb', simsun;
+    background-color: #e0e0e0;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a{
+    cursor: pointer;
+}
+/*搜索结果高亮*/
+em{
+    color: #c00;
+    font-style: normal;
+}
+/*解决因内部float导致的外部div高度为0的问题*/
+.clear-fix:after { display: table; content: ""; width: 0; clear: both; }
+
+/* 分页条样式 */
+ul.pager{
+    padding: 0;
+    margin: 10px auto;
+    width: 1000px;
+    list-style: none;
+}
+ul.pager li{
+    float: left;
+    padding: 5px;
+    margin: 1px;
+    border: 1px solid #aaaaaa;
+    cursor: pointer;
+    min-width: 10px;
+    text-align: center;
+}
+ul.pager li.no-click{
+    border: none;
+    cursor: inherit;
+}
+ul.pager li.selected{
+    background: #cc0000;
+    color: #ffffff;
+}
+/* 分页条样式 end */
+footer{
+    height: 100px;
+}

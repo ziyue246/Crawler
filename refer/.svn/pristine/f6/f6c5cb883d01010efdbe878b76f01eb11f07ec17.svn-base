@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="refer.model.po.CitedReference" table="cited_reference" schema="wos_refer">
+        <id name="id" column="id"/>
+        <property name="checkValue" column="check_value"/>
+        <property name="authorAbr" column="author_abr"/>
+        <property name="authorExp" column="author_exp"/>
+        <property name="citedWorkAbr" column="cited_work_abr"/>
+        <property name="citedWorkExp" column="cited_work_exp"/>
+        <property name="year" column="year"/>
+        <property name="volume" column="volume"/>
+        <property name="issue" column="issue"/>
+        <property name="page" column="page"/>
+        <property name="identifier" column="identifier"/>
+        <property name="citingArticles" column="citing_articles"/>
+        <property name="viewRecordText" column="view_record_text"/>
+        <property name="viewRecordUrl" column="view_record_url"/>
+        <property name="paperId" column="paper_id"/>
+        <property name="reportId" column="report_id"/>
+        <property name="selected" column="selected"/>
+    </class>
+</hibernate-mapping>

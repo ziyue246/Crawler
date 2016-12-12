@@ -1,0 +1,13 @@
+package refer.model.po;
+
+import java.util.List;
+
+/**
+ * Created by Lv on 2016/12/12.
+ */
+public class OneStepResponse {
+    private List<CitedReference> citedList;
+    private String sid;
+    private String qid;
+
+}

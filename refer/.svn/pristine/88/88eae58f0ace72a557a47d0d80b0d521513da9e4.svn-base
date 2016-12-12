@@ -1,0 +1,49 @@
+package refer.model.po;
+
+/**
+ * Created by lv on 2016/12/11.
+ */
+public class Record {
+    private int id;
+    private String content;
+    private Integer paperId;
+    private Integer reportId;
+
+    public Record(String content, Integer paperId, Integer reportId) {
+        this.content = content;
+        this.paperId = paperId;
+        this.reportId = reportId;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public Integer getPaperId() {
+        return paperId;
+    }
+
+    public void setPaperId(Integer paperId) {
+        this.paperId = paperId;
+    }
+
+    public Integer getReportId() {
+        return reportId;
+    }
+
+    public void setReportId(Integer reportId) {
+        this.reportId = reportId;
+    }
+}

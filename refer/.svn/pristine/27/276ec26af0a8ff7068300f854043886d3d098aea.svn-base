@@ -1,0 +1,4 @@
+<div class="nav"><a routerLink="/checklist/{{record.reportId}}">返回</a></div>
+<div>
+    {{record.content}}
+</div>

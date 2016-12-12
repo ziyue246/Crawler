@@ -1,0 +1,101 @@
+package refer.model.po;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Created by Lv on 2016/12/12.
+ */
+public class OneStepResponse {
+    private List<CitedReference> citedList;
+    private String sid;
+    private String qid;
+    private Map<String,String> recordKeysMap;//window.recordKeysMapping['1'] = '333499586';
+    private String parentQid;
+    private String keyword;//关键字
+    private int startYear;//开始年
+    private int endYear;//结束年
+    private String cookie;//cookie
+    private List<String> selectList; //选择的标号
+
+
+    public String getCookie() {
+        return cookie;
+    }
+
+    public void setCookie(String cookie) {
+        this.cookie = cookie;
+    }
+    public List<String> getSelectList() {
+
+        return selectList;
+    }
+
+    public void setSelectList(List<String> selectList) {
+        this.selectList = selectList;
+    }
+
+    public List<CitedReference> getCitedList() {
+        return citedList;
+    }
+
+    public String getSid() {
+        return sid;
+    }
+
+    public String getQid() {
+        return qid;
+    }
+
+    public Map<String, String> getRecordKeysMap() {
+        return recordKeysMap;
+    }
+
+    public String getParentQid() {
+        return parentQid;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public int getStartYear() {
+        return startYear;
+    }
+
+    public int getEndYear() {
+        return endYear;
+    }
+
+    public void setCitedList(List<CitedReference> citedList) {
+        this.citedList = citedList;
+    }
+
+    public void setSid(String sid) {
+        this.sid = sid;
+    }
+
+    public void setQid(String qid) {
+        this.qid = qid;
+    }
+
+    public void setRecordKeysMap(Map<String, String> recordKeysMap) {
+        this.recordKeysMap = recordKeysMap;
+    }
+
+    public void setParentQid(String parentQid) {
+        this.parentQid = parentQid;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
+    public void setStartYear(int startYear) {
+        this.startYear = startYear;
+    }
+
+    public void setEndYear(int endYear) {
+        this.endYear = endYear;
+    }
+}

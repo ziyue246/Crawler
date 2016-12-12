@@ -1,0 +1,606 @@
+package refer.crawler.http;
+
+import org.apache.http.Header;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.params.ClientPNames;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
+import refer.crawler.common.StringUtil;
+import refer.crawler.common.SystemCommon;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/**
+ *
+ * @author rzy 2016/12/08
+ *
+ */
+public class Httpwos{
+
+    private String sid;
+
+    private String qid;
+    private String parentQid; // IEEE Transactions on Visualization and Computer
+    // Graphics
+    private final String modelCookie = "SID=\"<sid>\";CUSTOMER=\"CAS Institute of Automation\";E_GROUP_NAME=\"CAS Institute of Automation\";";
+    String Content_Type = "application/x-www-form-urlencoded;text/html;charset=UTF-8";
+
+    private String keyword;
+    private int startYear;
+    private int endYear;
+    Map<String,String> recordKeysMap ;
+    private List<Integer> selectedIdList;
+    private int printCount;
+
+    public Map<String, String> getRecordKeysMap() {
+        return recordKeysMap;
+    }
+
+    public void setRecordKeysMap(Map<String, String> recordKeysMap) {
+        this.recordKeysMap = recordKeysMap;
+    }
+
+    public void setPrintCount(int printCount) {
+        this.printCount = printCount;
+    }
+
+    public int getPrintCount() {
+        return printCount;
+    }
+
+    public String getSid() {
+        return sid;
+    }
+
+    public void setSid(String sid) {
+        this.sid = sid;
+    }
+
+    public String getQid() {
+        return qid;
+    }
+
+    public void setQid(String qid) {
+        this.qid = qid;
+    }
+
+    public int getStartYear() {
+        return startYear;
+    }
+
+    public void setStartYear(int startYear) {
+        this.startYear = startYear;
+    }
+
+    public int getEndYear() {
+        return endYear;
+    }
+
+    public void setEndYear(int endYear) {
+        this.endYear = endYear;
+    }
+
+    public String getParentQid() {
+        return parentQid;
+    }
+
+    public void setParentQid(String parentQid) {
+        this.parentQid = parentQid;
+    }
+
+    public List<Integer> getSelectedIdList() {
+        return selectedIdList;
+    }
+
+    public void setSelectedIdList(List<Integer> selectedIdList) {
+        this.selectedIdList = selectedIdList;
+    }
+
+
+
+
+    public String getCookie(HtmlInfo html) {
+        String cookie = html.getCookie();
+        if (cookie == null || cookie.equals("")) {
+            cookie = "";
+            HttpGet g = new HttpGet("http://www.webofknowledge.com");
+            g.getParams().setParameter(ClientPNames.HANDLE_REDIRECTS, false);
+            String Content_Type = "application/x-www-form-urlencoded;text/html;charset=UTF-8";
+
+            String User_Agent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";
+
+            g.setHeader("User-Agent", User_Agent);
+            g.setHeader("Content-Type", Content_Type);
+
+            HttpClient client = HttpClients.createDefault();// httpClient(html);
+            HttpResponse response = null;
+            try {
+                response = client.execute(g);
+
+                for (Header co : response.getHeaders("Set-Cookie")) {
+                    if (co.getValue().startsWith("SID")) {
+                        sid = StringUtil.regMatcher(co.getValue(), "\"", "\"");
+                    }
+                    cookie += co.getValue().split(";")[0] + ";";
+                }
+                html.setCookie(cookie);
+                g.abort();
+                if (sid == null) {
+                    HttpGet get = null;
+                    try {
+                        String loc = response.getFirstHeader("Location").getValue();
+                        get = new HttpGet(loc);
+                        response = client.execute(get);
+
+                        for (Header co : response.getHeaders("Set-Cookie")) {
+                            if (co.getValue().startsWith("SID")) {
+                                sid = StringUtil.regMatcher(co.getValue(), "\"", "\"");
+                            }
+                            cookie += co.getValue().split(";")[0] + ";";
+                        }
+                    } finally {
+                        get.abort();
+                    }
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
+        return cookie;
+    }
+
+    public String simplePost(HtmlInfo html, Map<String, String> params, String mark) {
+        HttpClient client = HttpClients.createDefault();
+
+        if (html.getCookie() == null || sid == null)
+            getCookie(html);
+
+        HttpPost post = new HttpPost(html.getRealUrl());
+        if (mark.equals("01")) {
+            params.clear();
+            post.setHeader("Content-Type", "application/x-www-form-urlencoded");
+            getParamsMap01(params);
+            SystemCommon.printLog(" 01 post");
+            SystemCommon.printLog(html.getCookie());
+        } else if (mark.equals("02")) {
+            params.clear();
+            post.setHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+            getParamsMap02(params);
+            SystemCommon.printLog("  02  post:");
+            SystemCommon.printLog(html.getCookie());
+        } else if (mark.equals("03")) {//
+            params.clear();
+            post.setHeader("Content-Type", "application/x-www-form-urlencoded");
+            getParamsMap03(params);
+            SystemCommon.printLog("  03  post");
+            SystemCommon.printLog(html.getCookie());
+        } else {
+            params.clear();
+            post.setHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+            getParamsMap04(params);
+            SystemCommon.printLog("  04  post");
+            SystemCommon.printLog(html.getCookie());
+        }
+
+        List<NameValuePair> list = new ArrayList<NameValuePair>();
+        Set<String> keySet = params.keySet();
+        for (String key : keySet) {
+            list.add(new BasicNameValuePair(key, params.get(key)));
+        }
+
+        post.setHeader("User-Agent", html.getUa());
+        post.setHeader("Cookie", html.getCookie());
+        //post.setHeader("Referer", html.getReferUrl());
+        try {
+            post.setEntity(new UrlEncodedFormEntity(list));
+        } catch (UnsupportedEncodingException e2) {
+            e2.printStackTrace();
+        }
+        HttpResponse response = null;
+
+        try {
+            response = client.execute(post);
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        } finally {
+            post.abort();
+        }
+        String geturl = null;
+        try {
+            geturl = response.getFirstHeader("Location").getValue();
+        } catch (Exception e) {
+            // e.printStackTrace();
+        }
+        if (mark.equals("04")) {
+            try {
+                HttpEntity httpEntity = response.getEntity();
+                if (httpEntity != null) {
+                    String content = EntityUtils.toString(httpEntity, "utf-8");
+                    html.setContent(content);
+                    // System.out.println(mark+"\t:\t"+EntityUtils.toString(httpEntity,"utf-8"));
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if (response.containsHeader("Set-Cookie")) {
+            String cookie = null;
+            String value = response.getFirstHeader("Set-Cookie").getValue().trim();
+            if (value.contains(";"))
+                cookie = value.split(";")[0];
+            else
+                cookie = value;
+
+            cookie = modelCookie.replace("<sid>", sid) + cookie;
+            html.setCookie(cookie);
+        }
+        if (geturl == null)
+            return null;
+        html.setRealUrl(geturl);
+
+        return geturl;
+    }
+
+    public String simpleGet(HtmlInfo html) {
+        HttpClient client = HttpClients.createDefault();
+
+        HttpGet get = new HttpGet(html.getRealUrl());
+        html.setContent(null);
+        get.setHeader("User-Agent", html.getUa());
+        get.setHeader("Cookie", html.getCookie());
+
+        // get.setHeader("Content-Type", Content_Type);
+        // get.setHeader("Referer", html.getReferUrl());
+        HttpResponse response = null;
+        try {
+            response = client.execute(get);
+            String cookie = null;
+            String cookieValue = response.getFirstHeader("Set-Cookie").getValue();
+            if (cookieValue.contains(";"))
+                cookie = cookieValue.split(";")[0].trim();
+            else
+                cookie = cookieValue.trim();
+            cookie = modelCookie.replace("<sid>", sid) + cookie;
+            html.setCookie(cookie);
+            html.setReferUrl(html.getRealUrl());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (response != null && response.getStatusLine().getStatusCode() == 200) {
+            HttpEntity httpEntity = response.getEntity();
+            String result = null;
+            try {
+                result = EntityUtils.toString(httpEntity);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            html.setContent(result);
+        }
+
+        return response.toString();
+    }
+
+
+    public void getParamsMap04(Map<String, String> params) {
+
+        params.put("action","go");
+        params.put("displayCitedRefs","true");
+        params.put("displayTimesCited","true");
+        params.put("displayUsageInfo","true");
+        params.put("viewType","summary");
+        params.put("product","RSCI");
+        params.put("mark_id","RSCI");
+        params.put("colName","RSCI");
+        params.put("search_mode","CitedRefIndex");
+        params.put("locale","zh_CN");
+        params.put("view_name","RSCI-CitedRefIndex-summary");
+        params.put("sortBy","PY.D;LD.D;SO.A.ru;VL.D;PG.A;AU.A.ru");
+        params.put("mode","outputService");
+        params.put("qid",qid);
+        params.put("SID",sid);
+        params.put("format","formatForPrint");
+        params.put("filters","CITTIMES TITLE SOURCE ISSN AUTHORSIDENTIFIERS ACCESSION_NUM AUTHORS ");
+        params.put("selectedIds","1");
+        params.put("mark_to","");
+        params.put("mark_from","");
+        params.put("queryNatural","<b>被引著作:</b> ("+keyword+")");
+        params.put("count_new_items_marked","0");
+        params.put("MaxDataSetLimit","");
+        params.put("use_two_ets","false");
+        params.put("DataSetsRemaining","");
+        params.put("IsAtMaxLimit","");
+        params.put("IncitesEntitled","no");
+        params.put("value(record_select_type)","pagerecords");
+        params.put("fields_selection","CITTIMES TITLE SOURCE ISSN AUTHORSIDENTIFIERS ACCESSION_NUM AUTHORS");
+        params.put("totalMarked","1");
+
+    }
+
+    public void getParamsMap03(Map<String, String> params) {
+
+        params.put("product", "RSCI");
+        params.put("SID", sid);
+        params.put("selectedIds", "");
+        params.put("TitleFormat", "");
+        params.put("parentQid", parentQid);
+        params.put("input_invalid_notice", "检索错误: 请输入检索词。");
+        params.put("input_invalid_notice_limits", " <br/>注: 滚动框中显示的字段必须至少与一个其他检索字段相组配。");
+        params.put("update_back2search_link_param", "yes");
+        params.put("selectedRecs", "0");// 上次选择的个数
+        params.put("page", "1");
+        params.put("search_mode", "CitedRefIndex");
+        params.put("formValue(summary_mode)", "CitedReferenceSearch");
+        params.put("citedRefStep2MaxChecks", "您选择的记录数大于允许的数量 。仅选择了前  条记录。");
+        params.put("citedRefStep2FinishLoadingCheck", "请先等待页面加载完毕，然后再选中复选框。");
+        params.put("postFormSubmitUrl",
+                "http://apps.webofknowledge.com/summary.do?product=RSCI&parentQid=" + parentQid + "&SID=" + sid
+                        + "&search_mode=CitedReferenceSearch&formValue(summary_mode)=CitedReferenceSearch&page=1");
+        params.put("max_selected_cited_recs.top", "500");
+        params.put("selected_cited_recs.top", "0");// 上次选择的个数
+        params.put("clearall_url.top", "http://apps.webofknowledge.com/summary.do?ClearCheckboxes=all&cacheurl=no");
+        params.put("fastLaneUpdateSelection_url.top",
+                "http://apps.webofknowledge.com/fastLaneUpdateSelection.do?cacheurl=no");
+        params.put("Finish Search.x", "443");
+        params.put("Finish Search.y", "446");
+        params.put("all_summary_IDs", "");
+//		params.put("isickref", "1");// 对应选择的标号
+//		params.put("isickref", "2");
+//		params.put("isickref", "3");
+        for (Integer i : selectedIdList) {
+            if (i%50 < 10) {
+                params.put("isickref", (i+1) + "");
+            }
+        }
+        params.put("all_summary_IDs", "");
+
+        params.put("viewAbstractUrl", "/RefViewAbstract.do?product={0}&colName={0}&SID=" + sid
+                + "&search_mode=CitedFullRecord&viewType=ViewAbstract&");
+        params.put("LinksAreAllowedRightClick", "/CitedFullRecord.do");
+        params.put("LinksAreAllowedRightClick", "/CitedRefList.do");
+        params.put("LinksAreAllowedRightClick", "/InterService.do");
+//		params.put("isickref", "11");// 对应选择的标号
+//		params.put("isickref", "12");
+//		params.put("isickref", "13");
+
+        for (Integer i : selectedIdList) {
+            if (i%50 >= 10) {
+                params.put("isickref", (i+1) + "");
+            }
+        }
+        params.put("all_summary_IDs", "");
+        params.put("viewAbstractUrl", "/RefViewAbstract.do?product={0}&colName={0}&SID=" + sid
+                + "&search_mode=CitedFullRecord&viewType=ViewAbstract&");
+        params.put("LinksAreAllowedRightClick", "/CitedFullRecord.do");
+        params.put("LinksAreAllowedRightClick", "/CitedRefList.do");
+        params.put("LinksAreAllowedRightClick", "/InterService.do");
+        params.put("selectedrefpg", "1");
+        params.put("max_selected_cited_recs.bottom", "500");
+        params.put("selected_cited_recs.bottom", selectedIdList.size()+"");// 总数
+        params.put("clearall_url.bottom", "http://apps.webofknowledge.com/summary.do?ClearCheckboxes=all&cacheurl=no");
+        params.put("fastLaneUpdateSelection_url.bottom",
+                "http://apps.webofknowledge.com/fastLaneUpdateSelection.do?cacheurl=no");
+        params.put("fieldCount", "13");
+        params.put("value(bool_1_2)", "AND");
+        params.put("value(bool_2_3)", "AND");
+        params.put("value(bool_3_4)", "AND");
+        params.put("value(bool_4_5)", "AND");
+        params.put("value(bool_5_6)", "AND");
+        params.put("value(bool_6_7)", "AND");
+        params.put("value(bool_7_8)", "AND");
+        params.put("value(bool_8_9)", "AND");
+        params.put("value(bool_9_10)", "AND");
+        params.put("value(bool_10_11)", "AND");
+        params.put("value(bool_11_12)", "AND");
+        params.put("value(bool_12_13)", "AND");
+        params.put("value(bool_13_14)", "AND");
+        params.put("value(select2)", "LA");
+        params.put("value(input2)", "");
+        params.put("value(select3)", "DT");
+        params.put("value(input3)", "");
+        params.put("value(limitCount)", "15");
+        params.put("docNumForVA", "");
+    }
+
+    public void getParamsMap01(Map<String, String> params) {
+        params.put("fieldCount", "3");
+        params.put("action", "search");
+        params.put("product", "RSCI");
+        params.put("search_mode", "CitedReferenceSearch");
+        params.put("SID", sid);// "X2E5XpY6GzUyvXtfCjB"
+        params.put("max_field_count", "25");
+        params.put("max_field_notice", "注意: 无法添加另一字段。");
+        params.put("input_invalid_notice", "检索错误: 请输入检索词。");
+        params.put("exp_notice", "检索错误: 专利检索词可在多个家族中找到 (");
+        params.put("input_invalid_notice_limits", " <br/>注: 滚动框中显示的字段必须至少与一个其他检索字段相组配。");
+        params.put("sa_params", "RSCI||Q2xpqnblol8u4mf9XBX|http://apps.webofknowledge.com|'");
+        params.put("formUpdated", "true");
+        params.put("value(input1)", "");
+        params.put("value(select1)", "CAU");
+        params.put("value(hidInput1)", "");
+        params.put("value(bool_1_2)", "AND");
+        params.put("value(input2)", keyword);
+        params.put("value(select2)", "CW");
+        params.put("value(hidInput2)", "");
+        params.put("value(bool_2_3)", "AND");
+        params.put("value(input3)", "");
+        params.put("value(select3)", "CY");
+        params.put("x", "887");
+        params.put("y", "534");
+        params.put("value(hidInput3)", "");
+        params.put("impliedReferenceSilo", "RSCI");
+        params.put("limitStatus", "expanded");
+        params.put("ss_lemmatization", "On");
+        params.put("ss_spellchecking", "Suggest");
+        params.put("SinceLastVisit_UTC", "");
+        params.put("SinceLastVisit_DATE", "");
+        params.put("range", "ALL");
+        params.put("period", "Year Range");
+        params.put("startYear", "2005");
+        params.put("endYear", "2016");
+        params.put("editions", "RSCI");
+        params.put("update_back2search_link_param", "yes");
+        params.put("ss_query_language", "auto");
+        params.put("rs_sort_by", "PY.D;LD.D;SO.A.ru;VL.D;PG.A;AU.A.ru");
+
+        String Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/ *;q=0.8";
+        String acceptEncoding = "gzip, deflate";
+        String Accept_Language = "zh-CN,zh;q=0.8";
+        String Cache_Control = "max-age=0";
+        String Content_Type = "application/x-www-form-urlencoded";
+        String Host = "apps.webofknowledge.com";
+        String RealUrl = "http:/" + "/apps.webofknowledge.com";
+        String Proxy_Connection = "keep-alive";
+        String Referer = "http:/" + "/apps.webofknowledge.com/RSCI_CitedReferenceSearch_input.do?SID=" + sid
+                + "&product=RSCI&search_mode=CitedReferenceSearch&errorQid=6";
+        String Upgrade_Insecure_Requests = "1";
+    }
+
+    public void getParamsMap02(Map<String, String> params) {
+        System.out.println("selectedIdList.size()"+selectedIdList.size());
+        if (selectedIdList == null && selectedIdList.size() == 0) {
+            return;
+        }
+
+        StringBuffer selectedIdsSB = new StringBuffer();
+        selectedIdsSB.append(" ");
+        for (Integer key : selectedIdList) {
+            if(recordKeysMap.containsKey(key+"")){
+                selectedIdsSB.append("###" + recordKeysMap.get(key+""));
+            }else {
+                SystemCommon.printLog("选取的数据标号不在范围之内");
+                return;
+            }
+        }
+        params.put("product", "RSCI");
+        params.put("SID", sid);
+        params.put("selectedIds", "");
+        params.put("TitleFormat", "");
+        params.put("parentQid", parentQid);
+        params.put("input_invalid_notice", "检索错误: 请输入检索词。");
+        params.put("input_invalid_notice_limits", " <br/>注: 滚动框中显示的字段必须至少与一个其他检索字段相组配。");
+        params.put("update_back2search_link_param", "yes");
+        params.put("selectedRecs", "0");
+        params.put("page", "1");
+        params.put("search_mode", "CitedReferenceSearch");
+        params.put("formValue(summary_mode)", "CitedReferenceSearch");
+        params.put("citedRefStep2MaxChecks", "您选择的记录数大于允许的数量 。仅选择了前  条记录。");
+        params.put("citedRefStep2FinishLoadingCheck", "请先等待页面加载完毕，然后再选中复选框。");
+        params.put("postFormSubmitUrl",
+                "http://apps.webofknowledge.com/summary.do?product=RSCI&parentQid=" + parentQid + "&SID=" + sid
+                        + "&search_mode=CitedReferenceSearch&formValue(summary_mode)=CitedReferenceSearch&page=1");
+        params.put("max_selected_cited_recs.top", "500");
+        params.put("selected_cited_recs.top", "0");
+        params.put("clearall_url.top", "http://apps.webofknowledge.com/summary.do?ClearCheckboxes=all&cacheurl=no");
+        params.put("fastLaneUpdateSelection_url.top",
+                "http://apps.webofknowledge.com/fastLaneUpdateSelection.do?cacheurl=no");
+        params.put("all_summary_IDs", "");
+        // params.put("isickref","1");//对应选择的标号
+        // params.put("isickref","2");
+        // params.put("isickref","3");
+        for (Integer i : selectedIdList) {
+            if (i % 50 < 10) {
+                params.put("isickref", (i+1) + "");
+            }
+        }
+        params.put("all_summary_IDs", "");
+        params.put("viewAbstractUrl", "/RefViewAbstract.do?product={0}&colName={0}&SID=" + sid
+                + "&search_mode=CitedFullRecord&viewType=ViewAbstract&");
+        params.put("LinksAreAllowedRightClick", "/CitedFullRecord.do");
+        params.put("LinksAreAllowedRightClick", "/CitedRefList.do");
+        params.put("LinksAreAllowedRightClick", "/InterService.do");
+        // params.put("isickref","11");//对应选择的标号
+        // params.put("isickref","12");
+        // params.put("isickref","13");
+        for (Integer i : selectedIdList) {
+            if (i%50 >= 10) {
+                params.put("isickref", (i+1) + "");
+            }
+        }
+        params.put("all_summary_IDs", "");
+        params.put("viewAbstractUrl", "/RefViewAbstract.do?product={0}&colName={0}&SID=" + sid
+                + "&search_mode=CitedFullRecord&viewType=ViewAbstract&");
+        params.put("LinksAreAllowedRightClick", "/CitedFullRecord.do");
+        params.put("LinksAreAllowedRightClick", "/CitedRefList.do");
+        params.put("LinksAreAllowedRightClick", "/InterService.do");
+        params.put("selectedrefpg", "1");
+        params.put("max_selected_cited_recs.bottom", "500");
+        params.put("selected_cited_recs.bottom", selectedIdList.size() + "");
+        params.put("clearall_url.bottom", "http://apps.webofknowledge.com/summary.do?ClearCheckboxes=all&cacheurl=no");
+        params.put("fastLaneUpdateSelection_url.bottom",
+                "http://apps.webofknowledge.com/fastLaneUpdateSelection.do?cacheurl=no");
+        params.put("fieldCount", "13");
+
+        params.put("value(bool_1_2)", "AND");
+        params.put("value(bool_2_3)", "AND");
+        params.put("value(bool_3_4)", "AND");
+        params.put("value(bool_4_5)", "AND");
+        params.put("value(bool_5_6)", "AND");
+        params.put("value(bool_6_7)", "AND");
+        params.put("value(bool_7_8)", "AND");
+        params.put("value(bool_8_9)", "AND");
+        params.put("value(bool_9_10)", "AND");
+        params.put("value(bool_10_11)", "AND");
+        params.put("value(bool_11_12)", "AND");
+        params.put("value(bool_12_13)", "AND");
+        params.put("value(bool_13_14)", "AND");
+        params.put("value(select2)", "LA");
+        params.put("value(input2)", "");
+        params.put("value(select3)", "DT");
+        params.put("value(input3)", "");
+        params.put("value(limitCount)", "15");
+        params.put("docNumForVA", "");
+
+
+        String selectedIdstrs = selectedIdsSB.toString();
+        int splitlen = selectedIdstrs.length()/10+1;
+
+        for (int i = 0; i < 10; i++) {
+            if ((i + 1) * splitlen > selectedIdstrs.length()) {
+                String splitstr = selectedIdstrs.substring(i * splitlen);
+                params.put("splittedSelectedIdsPart" + i, splitstr);
+               // System.out.println(("splittedSelectedIdsPart" + i)+"\t:\t"+ splitstr);
+                break;
+            } else {
+                String splitstr = selectedIdstrs.substring(i * splitlen, (i + 1) * splitlen);
+                params.put("splittedSelectedIdsPart" + i, splitstr);
+             //   System.out.println(("splittedSelectedIdsPart" + i)+"\t:\t"+ splitstr);
+            }
+        }
+        System.out.println();
+    }
+
+    public void extractRecordKeys2Map(String content) {
+        String pattern = "window\\.recordKeysMapping\\[\\'\\d{1,3}\\'\\]\\s+=\\s+\\'\\d{6,11}";
+        Pattern p = Pattern.compile(pattern);
+        Matcher m = p.matcher(content);
+        if(recordKeysMap==null)recordKeysMap = new HashMap<String,String>();
+        while (m.find()) {
+            String s=m.group();
+            String key = s.split("\\[\\'")[1].split("\\'\\]")[0];
+            String value = s.split("= \\'")[1].split("\\'")[0];
+            recordKeysMap.put(key,value);
+        }
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
+}

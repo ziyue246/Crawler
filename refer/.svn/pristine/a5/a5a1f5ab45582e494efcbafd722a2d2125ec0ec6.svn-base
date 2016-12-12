@@ -1,0 +1,54 @@
+<ul>
+    <li class="clear-fix" *ngFor="let paper of paperList">
+        <div class="title">{{paper.title}}</div>
+        <div class="check-form clear-fix">
+            <table>
+                <tr>
+                    <td>
+                        <table class="check-table">
+                            <tr>
+                                <th>选择</th>
+                                <th>被引作者 <a (click)="paper.showAllAuthors=true" *ngIf="!paper.showAllAuthors">[显示所有作者]</a>
+                                    <a (click)="paper.showAllAuthors=false" *ngIf="paper.showAllAuthors">[隐藏所有作者]</a></th>
+                                <th>被引著作 <a (click)="paper.showAllWork=true" *ngIf="!paper.showAllWork">[显示完整标题]</a>
+                                    <a (click)="paper.showAllWork=false" *ngIf="paper.showAllWork">[显示缩写标题]</a></th>
+                                <th>出版年</th>
+                                <th>卷</th>
+                                <th>期</th>
+                                <th>页</th>
+                                <th>标识符</th>
+                                <th>施引文献</th>
+                                <th>查看记录</th>
+                            </tr>
+                            <tr *ngFor="let cited of paper.citedList">
+                                <td><input type="checkbox" [(ngModel)]="cited.selected"/></td>
+                                <td><span *ngIf="!paper.showAllAuthors">{{cited.authorAbr}}</span>
+                                    <span *ngIf="paper.showAllAuthors">{{cited.authorExp}}</span></td>
+                                <td><span *ngIf="!paper.showAllWork">{{cited.citedWorkAbr}}</span>
+                                    <span *ngIf="paper.showAllWork">{{cited.citedWorkExp}}</span></td>
+                                <td>{{cited.year}}</td>
+                                <td>{{cited.volume}}</td>
+                                <td>{{cited.issue}}</td>
+                                <td>{{cited.page}}</td>
+                                <td>{{cited.identifier}}</td>
+                                <td>{{cited.citingArticles}}</td>
+                                <td><a *ngIf="cited.viewRecordText!=null&&cited.viewRecordText.length>0"
+                                       [href]="cited.viewRecordUrl">{{cited.viewRecordText}}</a> </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <span *ngIf="paper.refreshing">筛选列表失效，正在重新获取......</span>
+                        <div *ngIf="!paper.refreshing">
+                            <button *ngIf="paper.finished==null||paper.finished==0" (click)="query(paper)" class="check-finished">选定</button>
+                            <span *ngIf="paper.finished==1">检索中......</span>
+                            <a *ngIf="paper.finished==2" class="check-result" href="#">查看结果</a>
+                            <button *ngIf="paper.finished==2" (click)="query(paper)" class="check-recheck">重选</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </li>
+
+</ul>
