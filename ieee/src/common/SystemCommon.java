@@ -41,25 +41,29 @@ public class SystemCommon {
         	printLog(header.getName()+"\t:\t"+header.getValue());
 		}
 	}
-	public static void printBlog(Bloggers blog){
-		printLog("author    \t:"+blog.getAuthor());
-		printLog("address   \t:"+blog.getAddress());
-		printLog("birth     \t:"+blog.getBirth());
-		printLog("fansnum   \t:"+blog.getFansNum());
-		printLog("fansUrl   \t:"+blog.getFansUrl());
-		printLog("weibonum  \t:"+blog.getWeiboNum());
-		printLog("weiboUrl  \t:"+blog.getWeiboUrl());
-		printLog("follownum \t:"+blog.getFollowNum());
-		printLog("followUrl \t:"+blog.getFollowUrl());
-		printLog("info      \t:"+blog.getInfo());
-		printLog("infourl   \t:"+blog.getInfoUrl());
-		printLog("nick      \t:"+blog.getNick());
-		printLog("provice   \t:"+blog.getProvince());
-		printLog("weibourl  \t:"+blog.getWeiboUrl());
-		printLog("sex       \t:"+blog.getSex());
-		printLog("registtime\t:"+blog.getRegistTime());
-		printLog("md5       \t:"+blog.getMd5());
-		printLog("tag       \t:"+blog.getTag());
-		
+	
+	
+	
+	public static int getMonth(String month){
+		String []months = {"January",//1
+							"February",//2
+							"March",//3
+							"April",//4
+							"May",//5
+							"June",//6
+							"July",//7
+							"August",//8
+							"September",//9
+							"October",//10
+							"November",//11
+							"December"};//12
+		for (int i = 0; i < months.length; i++) {
+			if(months[i].contains(month)||months[i].equals(month)){
+				return i+1;
+			}
+		}
+		return 0;
 	}
+	
+	
 }

@@ -1,131 +1,39 @@
 package common;
 
+import java.util.Date;
+
 public class IEEEinfo {
-	private String authors;
-	private String patentCitationCount;
-	private int citationCount;
-	private String articleNumber;
-	private String isNumber;
-	private int endPage;
-	private int startPage;
-	private String doi;
-	private String publicationNumber;
-	private String rightsLink;
-	private String publicationLink;
-	private String pdfLink;
-	private int pdfSize;
-	private int publicationYear;
-	private String htmlLink;
-	private String documentLink;
-	private String citationsLink;
+	private int id;
+	private String url;//private String htmlLink;
 	private String title;
-	private String publisher;
-	private String publicationTitle;
-	private String displayPublicationTitle;
-	private String brief;//abstract;
-	private String articleContentType;
-	private String docIdentifier;
-	public String getAuthors() {
-		return authors;
+	private String authors;
+	private String authorsids;
+	private String doi;
+	private Date pubtime;//第二页
+	private String journal;// "publicationTitle":"2006 Annual IEEE India Conference",
+	private Date insertTime;
+	private String brief;
+	private String keywords;//第二页
+	//http://ieeexplore.ieee.org/document/4086280/references?ctx=references
+	private String referUrl;	
+	private String md5;
+	//http://ieeexplore.ieee.org/document/4086280/citations?ctx=citations
+	private String citeUrl;
+	private int referNum;//第二页
+	private int citeNum;// "citationCount":2,
+	private String category;//"articleContentType":"Conference Publications"
+	private String searchKeyword;
+	public int getId() {
+		return id;
 	}
-	public void setAuthors(String authors) {
-		this.authors = authors;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public String getPatentCitationCount() {
-		return patentCitationCount;
+	public String getUrl() {
+		return url;
 	}
-	public void setPatentCitationCount(String patentCitationCount) {
-		this.patentCitationCount = patentCitationCount;
-	}
-	public int getCitationCount() {
-		return citationCount;
-	}
-	public void setCitationCount(int citationCount) {
-		this.citationCount = citationCount;
-	}
-	public String getArticleNumber() {
-		return articleNumber;
-	}
-	public void setArticleNumber(String articleNumber) {
-		this.articleNumber = articleNumber;
-	}
-	public String getIsNumber() {
-		return isNumber;
-	}
-	public void setIsNumber(String isNumber) {
-		this.isNumber = isNumber;
-	}
-	public int getEndPage() {
-		return endPage;
-	}
-	public void setEndPage(int endPage) {
-		this.endPage = endPage;
-	}
-	public int getStartPage() {
-		return startPage;
-	}
-	public void setStartPage(int startPage) {
-		this.startPage = startPage;
-	}
-	public String getDoi() {
-		return doi;
-	}
-	public void setDoi(String doi) {
-		this.doi = doi;
-	}
-	public String getPublicationNumber() {
-		return publicationNumber;
-	}
-	public void setPublicationNumber(String publicationNumber) {
-		this.publicationNumber = publicationNumber;
-	}
-	public String getRightsLink() {
-		return rightsLink;
-	}
-	public void setRightsLink(String rightsLink) {
-		this.rightsLink = rightsLink;
-	}
-	public String getPublicationLink() {
-		return publicationLink;
-	}
-	public void setPublicationLink(String publicationLink) {
-		this.publicationLink = publicationLink;
-	}
-	public String getPdfLink() {
-		return pdfLink;
-	}
-	public void setPdfLink(String pdfLink) {
-		this.pdfLink = pdfLink;
-	}
-	public int getPdfSize() {
-		return pdfSize;
-	}
-	public void setPdfSize(int pdfSize) {
-		this.pdfSize = pdfSize;
-	}
-	public int getPublicationYear() {
-		return publicationYear;
-	}
-	public void setPublicationYear(int publicationYear) {
-		this.publicationYear = publicationYear;
-	}
-	public String getHtmlLink() {
-		return htmlLink;
-	}
-	public void setHtmlLink(String htmlLink) {
-		this.htmlLink = htmlLink;
-	}
-	public String getDocumentLink() {
-		return documentLink;
-	}
-	public void setDocumentLink(String documentLink) {
-		this.documentLink = documentLink;
-	}
-	public String getCitationsLink() {
-		return citationsLink;
-	}
-	public void setCitationsLink(String citationsLink) {
-		this.citationsLink = citationsLink;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 	public String getTitle() {
 		return title;
@@ -133,23 +41,41 @@ public class IEEEinfo {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getPublisher() {
-		return publisher;
+	public String getAuthors() {
+		return authors;
 	}
-	public void setPublisher(String publisher) {
-		this.publisher = publisher;
+	public void setAuthors(String authors) {
+		this.authors = authors;
 	}
-	public String getPublicationTitle() {
-		return publicationTitle;
+	public String getAuthorsids() {
+		return authorsids;
 	}
-	public void setPublicationTitle(String publicationTitle) {
-		this.publicationTitle = publicationTitle;
+	public void setAuthorsids(String authorsids) {
+		this.authorsids = authorsids;
 	}
-	public String getDisplayPublicationTitle() {
-		return displayPublicationTitle;
+	public String getDoi() {
+		return doi;
 	}
-	public void setDisplayPublicationTitle(String displayPublicationTitle) {
-		this.displayPublicationTitle = displayPublicationTitle;
+	public void setDoi(String doi) {
+		this.doi = doi;
+	}
+	public Date getPubtime() {
+		return pubtime;
+	}
+	public void setPubtime(Date pubtime) {
+		this.pubtime = pubtime;
+	}
+	public String getJournal() {
+		return journal;
+	}
+	public void setJournal(String journal) {
+		this.journal = journal;
+	}
+	public Date getInsertTime() {
+		return insertTime;
+	}
+	public void setInsertTime(Date insertTime) {
+		this.insertTime = insertTime;
 	}
 	public String getBrief() {
 		return brief;
@@ -157,23 +83,71 @@ public class IEEEinfo {
 	public void setBrief(String brief) {
 		this.brief = brief;
 	}
-	public String getArticleContentType() {
-		return articleContentType;
+	public String getKeywords() {
+		return keywords;
 	}
-	public void setArticleContentType(String articleContentType) {
-		this.articleContentType = articleContentType;
+	public void setKeywords(String keywords) {
+		this.keywords = keywords;
 	}
-	public String getDocIdentifier() {
-		return docIdentifier;
+	public String getReferUrl() {
+		return referUrl;
 	}
-	public void setDocIdentifier(String docIdentifier) {
-		this.docIdentifier = docIdentifier;
+	public void setReferUrl(String referUrl) {
+		this.referUrl = referUrl;
+	}
+	public String getMd5() {
+		return md5;
+	}
+	public void setMd5(String md5) {
+		this.md5 = md5;
+	}
+	public String getCiteUrl() {
+		return citeUrl;
+	}
+	public void setCiteUrl(String citeUrl) {
+		this.citeUrl = citeUrl;
+	}
+	public int getReferNum() {
+		return referNum;
+	}
+	public void setReferNum(int referNum) {
+		this.referNum = referNum;
+	}
+	public int getCiteNum() {
+		return citeNum;
+	}
+	public void setCiteNum(int citeNum) {
+		this.citeNum = citeNum;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public String getSearchKeyword() {
+		return searchKeyword;
+	}
+	public void setSearchKeyword(String searchKeyword) {
+		this.searchKeyword = searchKeyword;
 	}
 	
 	
-	
-	
-	
-	
+	public void print(){
+		System.out.println("authors    : " + this.getAuthors());
+		System.out.println("authorsids : " + this.getAuthorsids());
+		System.out.println("url        : " + this.getUrl());
+		System.out.println("referUrl   : " + this.getReferUrl());
+		System.out.println("referNum   : " + this.getReferNum());
+		System.out.println("citeUrl    : " + this.getCiteUrl());
+		System.out.println("citeNum    : " + this.getCiteNum());
+		System.out.println("category   : " + this.getCategory());
+		System.out.println("doi        : " + this.getDoi());
+		System.out.println("title      : " + this.getTitle());
+		System.out.println("keyword    : " + this.getKeywords());
+		System.out.println("pubtime    : " + this.getPubtime().toLocaleString());
+		System.out.println("MD5        : " + this.getMd5());
+		System.out.println();
+	}
 	
 }

@@ -351,7 +351,6 @@ public class Httpieee{
 
         try {
             response = client.execute(get);
-
             if (response.containsHeader("Set-Cookie")) {
                 String cookie = "";
                 for (Header co : response.getHeaders("Set-Cookie")) {
